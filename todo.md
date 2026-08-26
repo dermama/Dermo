@@ -1,0 +1,19 @@
+# Project TODO
+
+- [x] Türkçe lüks estetik danışmanlık sitesi için özgün tasarım sistemini tanımlamak
+- [x] Referans görsel trendlerini, hareket ilkelerini ve içerik mimarisini araştırmak
+- [x] Marka anlatısını, hizmet metinlerini ve güven odaklı içerikleri Türkçe hazırlamak
+- [x] Hero alanı için özgün estetik editoryal görselleri ve destekleyici arka plan medyasını hazırlamak
+- [x] Üst gezinme, mobil menü ve sayfa içi yönlendirmeyi oluşturmak
+- [x] Etkileyici hero deneyimini, imza tipografiyi ve etkileşimli vurguları geliştirmek
+- [x] Danışmanlık yaklaşımı, hizmet alanları ve süreç bölümlerini tasarlamak
+- [x] Eczacı uzmanlığını anlatan güven ve uzmanlık bölümünü oluşturmak
+- [x] Sık sorulan sorular ve dönüşüm odaklı iletişim çağrılarını eklemek
+- [x] Kaydırma, hover, basma ve seçim etkileşimlerini erişilebilir şekilde uygulamak
+- [x] Tüm ekran boyutlarında duyarlı düzeni ve azaltılmış hareket tercihlerini desteklemek
+- [x] Vitest kontrollerini çalıştırmak
+- [x] Görsel kalite, konsol hataları, performans ve mobil görünümü doğrulamak
+- [x] Yüksek görsel işçilik için mikro detayları, geçiş ritmini ve katmanlı hareketleri ayrı kalite turunda iyileştirmek
+- [x] Üretim derlemesi ve varlık boyutlarıyla performans doğrulaması yapmak; gerekli paket optimizasyonlarını yeniden ölçmek
+- [x] Ana istemci paketini 500 kB altına indirecek statik-site optimizasyonunu derleyip doğrulamak
+- [x] İnceleme sonrası odak, hover ve form geçişlerinde somut mikro etkileşim iyileştirmeleri uygulamak
