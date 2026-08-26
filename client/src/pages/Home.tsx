@@ -29,6 +29,29 @@ const navItems = [
   { label: "Neden DermaMatch", href: "#neden-dermamatch" },
 ];
 
+function DermaLensMark({ className = "" }: { className?: string }) {
+  return (
+    <svg className={`derma-lens-mark ${className}`} viewBox="0 0 72 72" aria-hidden="true">
+      <defs>
+        <linearGradient id="dermaLensFill" x1="18" y1="12" x2="57" y2="61" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#f4d0a0" />
+          <stop offset=".46" stopColor="#b55780" />
+          <stop offset="1" stopColor="#612440" />
+        </linearGradient>
+        <filter id="dermaLensGlow" x="-60%" y="-60%" width="220%" height="220%">
+          <feGaussianBlur stdDeviation="2.6" result="blur" />
+          <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+        </filter>
+      </defs>
+      <ellipse className="lens-orbit lens-orbit-primary" cx="36" cy="36" rx="29" ry="12" transform="rotate(-30 36 36)" />
+      <ellipse className="lens-orbit lens-orbit-secondary" cx="36" cy="36" rx="24" ry="10" transform="rotate(54 36 36)" />
+      <path className="lens-core" d="M36 14c8.4 8.8 12.2 16 12.2 24.9 0 9.6-5.5 16.1-12.2 16.1s-12.2-6.5-12.2-16.1C23.8 30 27.6 22.8 36 14Z" />
+      <path className="lens-highlight" d="M31.5 23c-3 3.8-4.5 8.1-4.5 12.6" />
+      <circle className="lens-light-dot" cx="57.2" cy="25.2" r="3.2" filter="url(#dermaLensGlow)" />
+    </svg>
+  );
+}
+
 function scrollToSection(id: string) {
   document.querySelector(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
 }
@@ -72,8 +95,8 @@ export default function Home() {
 
       <header className="site-header">
         <a className="brand-mark" href="#ust" aria-label="DermaMatch ana sayfa">
-          <span className="brand-orbit" aria-hidden="true" />
-          <span>DermaMatch</span>
+          <DermaLensMark />
+          <span className="brand-word">DermaMatch</span>
           <small>GÜZELLİK BİLİNCİ</small>
         </a>
 
@@ -95,7 +118,7 @@ export default function Home() {
       {menuOpen && (
         <div className="mobile-menu-overlay" role="dialog" aria-modal="true" aria-label="Mobil navigasyon">
           <div className="mobile-menu-panel">
-            <div className="mobile-menu-top"><span className="mobile-brand">DermaMatch</span><button aria-label="Menüyü kapat" onClick={() => setMenuOpen(false)}><X size={22} /></button></div>
+            <div className="mobile-menu-top"><span className="mobile-brand"><DermaLensMark />DermaMatch</span><button aria-label="Menüyü kapat" onClick={() => setMenuOpen(false)}><X size={22} /></button></div>
             <p className="mobile-subtitle">Bilinçli güzellik için sakin bir başlangıç.</p>
             <nav className="mobile-nav" aria-label="Mobil navigasyon">
               {navItems.map((item, index) => (
@@ -346,7 +369,7 @@ export default function Home() {
       </main>
 
       <footer className="site-footer">
-        <div className="page-shell footer-main"><a className="footer-logo" href="#ust">DermaMatch</a><p>Bilimle şekillenen, size ait güzellik ritüelleri.</p><a href="mailto:merhaba@dermamatch.com">merhaba@dermamatch.com <ArrowUpRight size={14} /></a></div>
+        <div className="page-shell footer-main"><a className="footer-logo" href="#ust"><DermaLensMark /> <span>DermaMatch</span></a><p>Bilimle şekillenen, size ait güzellik ritüelleri.</p><a href="mailto:merhaba@dermamatch.com">merhaba@dermamatch.com <ArrowUpRight size={14} /></a><span className="footer-lens-render" aria-hidden="true"><img src="/manus-storage/dermamatch-derma-lens-mark_51cee3be.png" alt="" loading="lazy" /></span></div>
         <div className="page-shell footer-bottom"><span>© 2026 DermaMatch</span><span>İstanbul · Online</span><button onClick={() => scrollToSection("#ust")}>Yukarı dön <ArrowUpRight size={14} /></button></div>
       </footer>
     </div>

@@ -30,3 +30,9 @@
 - [x] Formula Explorer içerik modelini ve üç aşamalı etkileşim dizisini otomatik testle doğrulamak
 - [x] Görsel yenileme sonrası üretim paketini code-splitting ile doğrulamak
 - [x] Yenilenen deneyimin performansını, azaltılmış hareket desteğini ve mobil davranışını doğrulamak
+- [x] DermaMatch için soft-science sembol dili, logo hiyerarşisi ve hareket prensiplerini tanımlamak
+- [x] DermaMatch monogramı ve favicon için özgün marka varlıklarını hazırlamak
+- [x] Başlık ve alt bilgi marka işaretini yeni logo sistemiyle güncellemek
+- [x] Favicon, sayfa başlığı meta verileri ve erişilebilir marka tanımlarını eklemek
+- [x] Logo ışık halkası, çizgi akışı ve hover efektlerini azaltılmış hareket desteğiyle uygulamak
+- [x] Logo sistemini masaüstü, mobil ve üretim derlemesinde doğrulamak

@@ -17,3 +17,7 @@ Formula Explorer seçici düğmeleri, geliştirme önizlemesinde üç ayrı eri�
 İkinci doğrulamada `Seç` sekmesi doğrudan tetiklendi ve seçili erişilebilir durumun `02 Seç` olarak güncellendiği gözlemlendi. Üretim derlemesi; görsel yenileme sonrasında istemci kodunu `react-runtime` (389.76 kB), ana deneyim (108.40 kB) ve ikon kütüphanesi (4.67 kB) olarak ayırdı. Derleme, chunk boyutu uyarısı olmadan tamamlandı.
 
 Son kalite turunda hero ile Formula Explorer bölümü 1280 px ve 375 px genişliklerde incelendi. Mobil düzende ürün sahnesi akışa geri dönüyor, imleç ipucu gizleniyor ve seçimler dokunmatik sekmeler olarak kalıyor. `prefers-reduced-motion` kuralı; ürün, hero video, ışık alanı ve parallax dönüşümlerini statik hale getiriyor. Son tarayıcı hata kaydında yeni istemci hatası bulunmadı.
+
+## Derma Lens Logo ve Favicon Doğrulaması
+
+Yeni Derma Lens monogramı, 1280 px masaüstü ve 375 px mobil önizlemelerinde üst gezinme içerisinde belirgin ve dengeli göründü. Favicon için ayrı SVG varlığı oluşturuldu; temiz üretim derlemesi favicon bağlantısını derlenmiş HTML çıktısında doğruladı. Yörünge çizgileri, çekirdek ışığı ve hover/focus hareketleri; `prefers-reduced-motion` etkin olduğunda animasyonsuz kalacak şekilde tanımlandı. TypeScript denetimi ve dört otomatik test başarıyla geçti.

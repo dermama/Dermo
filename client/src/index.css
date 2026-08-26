@@ -41,10 +41,19 @@ a { color: inherit; text-decoration: none; }
 .skip-link:focus { top: 18px; }
 
 .site-header { position: absolute; z-index: 20; top: 0; left: 0; right: 0; height: 106px; display: flex; align-items: center; justify-content: space-between; padding: 0 44px; color: #fff7eb; border-bottom: 1px solid rgba(255, 255, 255, 0.14); }
-.brand-mark { position: relative; display: grid; grid-template-columns: auto auto; align-items: center; gap: 0 8px; font-family: "Playfair Display", Georgia, serif; font-size: 26px; font-weight: 600; letter-spacing: .12em; }
+.brand-mark { position: relative; display: grid; grid-template-columns: auto auto; align-items: center; gap: 0 10px; font-family: "Playfair Display", Georgia, serif; font-size: 26px; font-weight: 600; letter-spacing: .075em; }
 .brand-mark small { grid-column: 2; margin-top: -4px; color: rgba(255,255,255,.55); font-family: "DM Mono", monospace; font-size: 7px; letter-spacing: .18em; white-space: nowrap; }
-.brand-orbit { width: 18px; height: 18px; grid-row: span 2; border: 1px solid rgba(255,247,235,.85); border-radius: 999px; transform: rotate(-35deg); }
-.brand-orbit::after { content: ""; display: block; width: 3px; height: 3px; margin: 3px 0 0 3px; border-radius: 50%; background: #d9a775; }
+.brand-word { line-height: .95; }
+.derma-lens-mark { width: 34px; height: 34px; grid-row: span 2; overflow: visible; }
+.lens-orbit { fill: none; stroke: rgba(255,242,220,.8); stroke-width: 1.1; transform-origin: center; }
+.lens-orbit-secondary { stroke: rgba(238,177,123,.47); stroke-dasharray: 3 3; }
+.lens-core { fill: url(#dermaLensFill); stroke: #f8ddba; stroke-width: 1.25; filter: drop-shadow(0 3px 7px rgba(0,0,0,.32)); }
+.lens-highlight { fill: none; stroke: rgba(255,251,240,.73); stroke-linecap: round; stroke-width: 2; }
+.lens-light-dot { fill: #f3c88f; }
+.brand-mark:hover .derma-lens-mark, .brand-mark:focus-visible .derma-lens-mark { filter: drop-shadow(0 0 10px rgba(239,179,123,.36)); }
+.brand-mark:hover .lens-orbit-primary, .brand-mark:focus-visible .lens-orbit-primary { animation: lens-orbit-primary 2.4s cubic-bezier(.23,1,.32,1) both; }
+.brand-mark:hover .lens-orbit-secondary, .brand-mark:focus-visible .lens-orbit-secondary { animation: lens-orbit-secondary 2.4s cubic-bezier(.23,1,.32,1) both; }
+.brand-mark:hover .lens-light-dot, .brand-mark:focus-visible .lens-light-dot { animation: lens-dot-pulse 1.3s ease-in-out both; }
 .desktop-nav { display: flex; gap: 31px; margin-left: auto; margin-right: 46px; font-size: 12px; letter-spacing: .02em; }
 .desktop-nav a { position: relative; padding: 8px 0; }
 .desktop-nav a::after { content: ""; position: absolute; left: 0; right: 0; bottom: 1px; height: 1px; background: currentColor; transform: scaleX(0); transform-origin: right; transition: transform .3s cubic-bezier(.23,1,.32,1); }
@@ -251,8 +260,11 @@ a { color: inherit; text-decoration: none; }
 .form-disclaimer { max-width: 430px; margin: 20px 0 0; color: rgba(255,248,239,.42); font-size: 10px; line-height: 1.6; }
 
 .site-footer { padding: 45px 0 22px; color: rgba(255,248,239,.65); background: #210d1a; }
-.footer-main { display: grid; grid-template-columns: 1fr 1.2fr auto; align-items: end; gap: 20px; }
-.footer-logo { color: #fff7eb; font: 600 45px/1 "Playfair Display", Georgia, serif; letter-spacing: .06em; }
+.footer-main { position: relative; display: grid; grid-template-columns: 1fr 1.2fr auto; align-items: end; gap: 20px; }
+.footer-logo { display: inline-flex; align-items: center; gap: 12px; width: fit-content; color: #fff7eb; font: 600 45px/1 "Playfair Display", Georgia, serif; letter-spacing: .06em; }
+.footer-logo .derma-lens-mark { width: 40px; height: 40px; }
+.footer-lens-render { position: absolute; right: 7%; bottom: -8px; width: 102px; height: 102px; opacity: .12; mix-blend-mode: screen; pointer-events: none; transform: rotate(-15deg); }
+.footer-lens-render img { width: 100%; height: 100%; object-fit: contain; }
 .footer-main p { max-width: 250px; margin: 0; font-size: 12px; line-height: 1.6; }
 .footer-main > a:last-child { display: inline-flex; align-items: center; gap: 7px; padding-bottom: 5px; border-bottom: 1px solid rgba(255,255,255,.35); font-size: 12px; }
 .footer-bottom { display: flex; justify-content: space-between; gap: 16px; margin-top: 51px; padding-top: 17px; border-top: 1px solid rgba(255,255,255,.12); color: rgba(255,248,239,.42); font: 9px "DM Mono", monospace; letter-spacing: .08em; }
@@ -278,6 +290,9 @@ a { color: inherit; text-decoration: none; }
 @keyframes rise-in { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes clip-in { from { clip-path: inset(0 0 100% 0); } to { clip-path: inset(0); } }
 @keyframes nudge-down { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(5px); } }
+@keyframes lens-orbit-primary { 0% { transform: rotate(-30deg); } 48% { transform: rotate(165deg); } 100% { transform: rotate(330deg); } }
+@keyframes lens-orbit-secondary { 0% { transform: rotate(54deg); } 48% { transform: rotate(-110deg); } 100% { transform: rotate(-306deg); } }
+@keyframes lens-dot-pulse { 0%, 100% { opacity: 1; r: 3.2; } 48% { opacity: .42; r: 4.5; } }
 @keyframes menu-fade { from { opacity: 0; } to { opacity: 1; } }
 @keyframes menu-slide { from { opacity: 0; transform: translateX(28px); } to { opacity: 1; transform: translateX(0); } }
 
@@ -322,6 +337,7 @@ a { color: inherit; text-decoration: none; }
   .page-shell { width: min(100% - 32px, 440px); }
   .brand-mark { font-size: 23px; }
   .brand-mark small { font-size: 6px; }
+  .derma-lens-mark { width: 29px; height: 29px; }
   .hero-section { min-height: 690px; }
   .hero-topline { font-size: 7px; }
   .hero-topline > span:last-child { display: none; }
@@ -356,6 +372,7 @@ a { color: inherit; text-decoration: none; }
   .footer-main { grid-template-columns: 1fr; gap: 17px; }
   .footer-main p { grid-column: auto; grid-row: auto; }
   .footer-main > a:last-child { justify-self: start; }
+  .footer-lens-render { right: 3%; bottom: 27px; width: 74px; height: 74px; }
   .footer-bottom { flex-wrap: wrap; margin-top: 35px; }
 }
 
@@ -363,6 +380,7 @@ a { color: inherit; text-decoration: none; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
   .hero-media video, .hero-title, .hero-arc-one, .hero-arc-two, .hero-light-field, .formula-stage::before, .formula-halo, .formula-bottle { transform: none !important; }
+  .brand-mark:hover .lens-orbit-primary, .brand-mark:focus-visible .lens-orbit-primary, .brand-mark:hover .lens-orbit-secondary, .brand-mark:focus-visible .lens-orbit-secondary, .brand-mark:hover .lens-light-dot, .brand-mark:focus-visible .lens-light-dot { animation: none !important; }
 }
 
 @media (prefers-reduced-motion: no-preference) {
