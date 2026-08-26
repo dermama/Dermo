@@ -22,6 +22,7 @@ import {
   formulaModes,
   servicePillars,
 } from "@shared/siteContent";
+import { AppointmentApplicationForm } from "@/components/AppointmentApplicationForm";
 
 const navItems = [
   { label: "Yaklaşım", href: "#yaklasim" },
@@ -60,15 +61,9 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState(0);
   const [openFaq, setOpenFaq] = useState(0);
-  const [submitted, setSubmitted] = useState(false);
   const [formulaFocus, setFormulaFocus] = useState(0);
   const heroRef = useRef<HTMLElement>(null);
   const productStageRef = useRef<HTMLDivElement>(null);
-
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    setSubmitted(true);
-  };
 
   const updateParallax = (event: PointerEvent<HTMLElement>, target: RefObject<HTMLElement | null>, intensity: number) => {
     const element = target.current;
@@ -357,15 +352,7 @@ export default function Home() {
               <p className="body-copy inverse-soft reveal-up">Kısaca kendinizi anlatın. Size en uygun görüşme biçimi ve uygun zamanlar için geri dönelim.</p>
               <div className="contact-notes"><span><ShieldCheck size={16} /> Yargısız alan</span><span><Sparkles size={16} /> Kişisel ritim</span></div>
             </div>
-            <form className="contact-form" onSubmit={handleSubmit}>
-              <label>Adınız<input required name="name" placeholder="Adınızı yazın" /></label>
-              <label>E-posta adresiniz<input required type="email" name="email" placeholder="merhaba@ornek.com" /></label>
-              <label>Size nasıl eşlik edelim?<select name="interest" defaultValue=""><option value="" disabled>Bir görüşme seçin</option>{consultationPlans.map((plan) => <option key={plan.name}>{plan.name}</option>)}</select></label>
-              <label>Bir not bırakın<textarea name="note" rows={3} placeholder="Cildiniz, rutininiz veya beklentinizle ilgili birkaç satır..." /></label>
-              <button type="submit" className="form-submit">Gönder <ArrowUpRight size={18} /></button>
-              {submitted && <p className="form-success" role="status">Teşekkürler. İlk uygun zamanda size dönüş yapılması için notunuzu aldık.</p>}
-              <p className="form-disclaimer">Bu form tanı veya tedavi talebi için kullanılmaz. Acil ya da tıbbi bir durum için uygun sağlık profesyoneline başvurun.</p>
-            </form>
+            <AppointmentApplicationForm />
           </div>
         </section>
       </main>

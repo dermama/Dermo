@@ -62,3 +62,18 @@
 - [x] `pnpm exec vite build` ile `dist/public` Vercel çıktısını yeniden üretip doğrulamak
 - [x] Gerçek hata satırının paylaşılan kayıtta yer almadığını belgelemek; yeni dağıtım başarısız olursa ek kaydı istemek
 - [x] Güncellenmiş Vercel tanı ve dağıtım notunun dosyada bulunduğunu yeniden doğrulamak
+- [ ] İletişim formu için e-posta, WhatsApp veya karma teslim yaklaşımını belirlemek
+- [ ] Seçilen kanalın hedef bilgilerini ve gerekli güvenli yapılandırmayı almak
+- [ ] Form gönderimini seçilen teslim kanalına bağlamak ve kullanıcı geri bildirimlerini güncellemek
+- [ ] Teslim akışını uçtan uca test edip dağıtım ortamındaki ayarları doğrulamak
+- [x] Randevu başvurusu, yönetici erişimi, görüşme odası ve mesajlaşma için veri modellerini tanımlamak
+- [x] Başvuru formuna danışmanlık sınırı, açık rıza ve KVKK onay metinlerini katlanabilir ayrıntılarla eklemek
+- [x] Parola korumalı ayrı yönetim alanı ve başvuru yönetimi ekranını oluşturmak
+- [x] Başvuru onayı sonrası yedi gün geçerli benzersiz görüşme bağlantısı üretmek ve erişimi denetlemek
+- [x] Kabul edilmiş başvurular için zarif, mobil uyumlu site içi mesajlaşma odası oluşturmak
+- [ ] Onay e-postası teslimi ve isteğe bağlı Instagram/Threads yönlendirmesi için yapılandırma eklemek
+- [x] Randevu sistemi, süreli erişim, onam kayıtları ve mesajlaşma akışını birim testleriyle kapsamak
+- [ ] Vercel Functions, harici veritabanı ve e-posta sağlayıcısı için üretim mimarisini doğrulamak
+- [ ] Vercel uyumlu veri katmanını ve gizli yapılandırma gereksinimlerini üretim Neon veritabanında uygulamak
+- [ ] Vercel Functions üzerinden başvuru, yönetim ve mesajlaşma API uçlarını canlı projede doğrulamak
+- [ ] Vercel üretim ortamında e-posta kabul bildirimi ve süreli görüşme bağlantısını doğrulamak

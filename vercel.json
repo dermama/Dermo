@@ -3,6 +3,11 @@
   "framework": "vite",
   "buildCommand": "pnpm exec vite build",
   "outputDirectory": "dist/public",
+  "functions": {
+    "api/trpc/[trpc].ts": {
+      "maxDuration": 10
+    }
+  },
   "rewrites": [
     {
       "source": "/(.*)",

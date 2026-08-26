@@ -1,36 +1,52 @@
 # DermaMatch — Vercel Dağıtım Notu
 
-DermaMatch, Vercel üzerinde **statik bir Vite tek sayfa uygulaması** olarak dağıtılacak şekilde yapılandırılmıştır. `vercel.json`, Vercel’in yalnızca istemci derlemesini üretmesini ve `dist/public` klasörünü sunmasını sağlar. Bu yaklaşım, proje içindeki Manus geliştirme sunucusunun Vercel üzerinde dinleyen bir HTTP servisi olarak başlatılmasını engeller.
+DermaMatch; **Vite istemcisi**, Vercel’in `/api/trpc/[trpc]` fonksiyonu, **Neon Postgres** ve **Resend** birlikte kullanılarak dağıtılır. `vercel.json` Vite çıktısını `dist/public` altında sunar; Vercel, proje kökündeki `api/` dosyalarını ayrıca Functions olarak algılar. Bu nedenle `/yonetim`, `/gorusme/:benzersiz-token` ve ana sayfa istemci taraflı SPA yollarıdır; `/api/trpc/*` ise dinamik arka uç yoludur.[^1][^2]
 
-## Hata tanısı
+## Mimari ve güvenlik sınırları
 
-Paylaşılan Vercel kaydında ayrı bir hata satırı görünmüyor; ancak kaydın son bölümü `server.listen(...)` kullanan Express başlangıç kodunu gösteriyor. Bu sunucu, Manus’un sürekli çalışan geliştirme/üretim düzeni için tasarlanmıştır ve Vercel’in statik Vite dağıtımında kullanılmamalıdır. Bu nedenle Vercel yapılandırması, `pnpm build` içindeki Express paketini değil, yalnızca `pnpm exec vite build` komutunun oluşturduğu istemci çıktısını yayınlar.
+| Katman | Uygulama | Amaç |
+| --- | --- | --- |
+| İstemci | React + Vite + Wouter | Başvuru formu, yönetim alanı ve görüşme odası |
+| API | `api/trpc/[trpc].ts` | Başvuru, yönetim parolası, token doğrulaması ve mesajlaşma |
+| Veri | Neon Postgres + Drizzle | Başvurular, onam zamanları, token hash’leri, oturumlar ve mesajlar |
+| E-posta | Resend | Kabul bildirimi ve özel görüşme URL’si |
 
-## Vercel ayarları
+Ham görüşme tokeni yalnız kabul anında üretilir ve e-postaya eklenir; veritabanında yalnız SHA-256 hash’i saklanır. Görüşme erişimi tam olarak yedi gün sonra sona erer; yönetici oturumu ayrıca on iki saatlik imzalı, `httpOnly` çerez kullanır. Yönetici bir görüşmeyi kapattığında ilgili URL anında geçersiz olur.
 
-GitHub deposunu içe aktarırken kök dizini depo kökünde bırakın. `vercel.json` aşağıdaki ayarları otomatik uygular.
+## Gerekli Vercel ortam değişkenleri
 
-| Ayar | Değer |
-| --- | --- |
-| Framework Preset | Vite |
-| Build Command | `pnpm exec vite build` |
-| Output Directory | `dist/public` |
-| SPA yönlendirme | Tüm yollar `index.html` dosyasına yeniden yazılır |
+| Değişken | Kaynak | Zorunluluk |
+| --- | --- | --- |
+| `DATABASE_URL` | Neon Vercel entegrasyonu | Zorunlu |
+| `JWT_SECRET` | Güçlü rastgele sunucu sırrı | Zorunlu |
+| `ADMIN_DASHBOARD_PASSWORD` | Yönetici tarafından belirlenen güçlü parola | Zorunlu |
+| `RESEND_API_KEY` | Resend | E-posta kabul bildirimi için zorunlu |
+| `RESEND_FROM_EMAIL` | Doğrulanmış Resend alan adıyla gönderen | E-posta kabul bildirimi için zorunlu |
+| `PUBLIC_APP_URL` | Canlı DermaMatch alan adı | Zorunlu |
+| `INSTAGRAM_URL` | İsteğe bağlı profil URL’si | İsteğe bağlı |
+| `THREADS_URL` | İsteğe bağlı profil URL’si | İsteğe bağlı |
 
-## Ortam değişkenleri
+> `RESEND_FROM_EMAIL` üretimde doğrulanmış bir alan adına ait olmalıdır. API anahtarları, parolalar ve tokenler kaynak koda veya GitHub deposuna yazılmaz.[^3]
 
-Mevcut tanıtım deneyimi, görüntülenmek için zorunlu bir ortam değişkenine ihtiyaç duymaz. Manus’a özgü analiz betiği dışa aktarılan HTML kabuğundan kaldırılmıştır; bu nedenle Vercel proje ayarlarında bu site için Manus analiz değişkeni tanımlamanıza gerek yoktur.
+## Neon migration uygulaması
 
-Bu dışa aktarılan sürüm; Express, tRPC, Manus OAuth ve veritabanı işlevlerini çalıştırmaz. Ana sayfa bu uç noktalara çağrı yapmadığı için görsel deneyim statik olarak çalışır. Gelecekte kimlik doğrulama, veri kaydı veya form gönderimini gerçek bir arka uca bağlamak isterseniz, bunlar için ayrıca Vercel Functions ya da uyumlu bir barındırılan API katmanı kurulmalıdır.
+Bu depodaki `drizzle/0000_needy_wasp.sql`, **Postgres** biçimindedir. Manus geliştirme veritabanı TiDB/MySQL olduğundan bu migration Manus SQL aracıyla uygulanamaz. Vercel’e bağlı Neon veritabanında şu yöntemlerden biriyle uygulanmalıdır:
 
-## Dağıtım akışı
+1. Neon SQL Editor üzerinden `drizzle/0000_needy_wasp.sql` dosyasının tamamını çalıştırın.
+2. Ya da bilgisayarınızda Vercel’in `DATABASE_URL` değerini yalnız o oturum için tanımlayıp `pnpm drizzle-kit migrate` çalıştırın.
 
-1. [GitHub deposunu](https://github.com/dermama/Dermo) Vercel’e aktarın.
-2. Vercel’in `vercel.json` içindeki ayarları algıladığını kontrol edin.
-3. **Deploy** düğmesini kullanın.
-4. Sayfayı doğrudan bir alt URL’den açarak SPA yönlendirmesini kontrol edin.
+Migration; yalnız yeni enum, tablo, unique constraint ve foreign key oluşturur; `DROP` veya veri silen `ALTER` içermez.
 
-> Vercel, Vite projeleri için özel üretim komutu ve çıktı klasörü tanımlamayı destekler; tek sayfa Vite uygulamalarında doğrudan bağlantıların çalışması için yeniden yazma kuralı gerekir.[^1][^2]
+## Canlıya alma ve doğrulama
 
-[^1]: [Vercel — Configuring a Build](https://vercel.com/docs/builds/configure-a-build)
-[^2]: [Vercel — Vite on Vercel](https://vercel.com/docs/frameworks/frontend/vite)
+1. [GitHub deposunun](https://github.com/dermama/Dermo) `main` dalını Vercel projesine bağlı tutun.
+2. Yukarıdaki ortam değişkenlerini Vercel’de **Production** ve test için gerekirse **Preview** kapsamına ekleyin.
+3. Neon migrationını üretim veritabanına uygulayın.
+4. GitHub’a gelen değişikliği dağıtın; Vercel Functions derlenirken `/api/trpc/[trpc]` görülmelidir.
+5. `/yonetim` altında parola ile giriş yapın, örnek olmayan gerçek bir test başvurusunu kabul edin, e-postayı ve `/gorusme/<token>` odasını doğrulayın. Ardından yönetimden bağlantıyı kapatıp URL’nin erişilemez olduğunu kontrol edin.
+
+> KVKK/açık rıza metni kullanıcı arayüzünde **taslak** olarak işaretlenmiştir. Canlıya alma öncesinde Türkiye’de yetkin hukuk ve KVKK uyum uzmanı tarafından incelenmelidir.
+
+[^1]: [Vercel — Vite on Vercel](https://vercel.com/docs/frameworks/frontend/vite)
+[^2]: [Vercel — Node.js Runtime](https://vercel.com/docs/functions/runtimes/node-js)
+[^3]: [Resend — Vercel Functions ile e-posta gönderimi](https://resend.com/docs/send-with-vercel-functions)
