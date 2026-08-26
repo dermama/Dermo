@@ -36,3 +36,11 @@
 - [x] Favicon, sayfa başlığı meta verileri ve erişilebilir marka tanımlarını eklemek
 - [x] Logo ışık halkası, çizgi akışı ve hover efektlerini azaltılmış hareket desteğiyle uygulamak
 - [x] Logo sistemini masaüstü, mobil ve üretim derlemesinde doğrulamak
+- [x] Yayın alanı erişim sorununu doğrulamak ve kullanıcıya çalışan bağlantıyı sağlamak
+- [x] Tüm sayfa bölümlerinin masaüstü, tablet ve telefon yerleşimini bölüm bazında incelemek
+- [x] Mobilde başlık, bölüm boşlukları, kartlar ve form için taşma/okunabilirlik düzeltmeleri uygulamak
+- [x] Parallax, geçiş ve hover efektlerinin ritmini daha akıcı ve tutarlı hale getirmek
+- [x] Daha gerçekçi malzeme, yansıma ve derinlik içeren geliştirilmiş 3B serum görseli hazırlamak
+- [x] Yeni serum sahnesini seçili modlara tepki veren ışık ve derinlik efektleriyle entegre etmek
+- [x] Serum render’ındaki görünür dama arka planını, sahneyle kusursuz birleşen koyu görsel katmanla düzeltmek
+- [x] Geliştirilen deneyimi geniş ekran, tablet, telefon, azaltılmış hareket ve üretim derlemesinde doğrulamak

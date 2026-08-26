@@ -21,3 +21,11 @@ Son kalite turunda hero ile Formula Explorer bölümü 1280 px ve 375 px genişl
 ## Derma Lens Logo ve Favicon Doğrulaması
 
 Yeni Derma Lens monogramı, 1280 px masaüstü ve 375 px mobil önizlemelerinde üst gezinme içerisinde belirgin ve dengeli göründü. Favicon için ayrı SVG varlığı oluşturuldu; temiz üretim derlemesi favicon bağlantısını derlenmiş HTML çıktısında doğruladı. Yörünge çizgileri, çekirdek ışığı ve hover/focus hareketleri; `prefers-reduced-motion` etkin olduğunda animasyonsuz kalacak şekilde tanımlandı. TypeScript denetimi ve dört otomatik test başarıyla geçti.
+
+## Duyarlı Görsel Kalite İncelemesi
+
+1440 px geniş ekran ve 375 px telefon önizlemelerinde hero, manifesto, Formula Explorer, editoryal bölüm, üçlü metod, görüşme planları, doku şeridi, SSS, form ve alt bilgi gözden geçirildi. Genel akışta yatay taşma veya okunamaz içerik görülmedi. Son geliştirme turunda; telefon için bölüm yoğunluğu ve form aralıkları daha da dengelenecek, Formula Explorer serumunda cam kalitesi, yansıma ve modlara bağlı atmosfer ayrımı güçlendirilecektir.
+
+## Serum ve Ekran Uyumluluğu İyileştirmesi
+
+Formula Explorer için daha gerçekçi plum cam, şampanya metal damlalık, gölge, yansıma ve modlara göre değişen ışık havuzu içeren yeni serum varlığı kullanıldı. İlk görsel kontrolde saptanan dama arka planı, gerçek RGBA alfa kanalıyla temizlenerek giderildi; sahne artık koyu erik zeminle kesintisiz birleşiyor. 1440 px masaüstü, 768 px tablet ve 375 px telefon turunda tüm ana bölümler; güncellenen Formula Explorer, metod kartları, planlar, SSS, form ve alt bilgi dahil olmak üzere görünür, okunabilir ve taşmasız kaldı. TypeScript denetimi, dört otomatik test ve üretim derlemesi başarıyla tamamlandı.

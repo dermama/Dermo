@@ -116,27 +116,32 @@ a { color: inherit; text-decoration: none; }
 .formula-intro .overline { margin-bottom: 18px; }
 .formula-layout { display: grid; grid-template-columns: minmax(400px, 1.12fr) minmax(300px, .72fr); gap: clamp(48px, 10vw, 150px); align-items: center; margin-top: 90px; }
 .formula-stage-wrap { position: relative; align-self: start; }
-.formula-stage { position: sticky; top: 7vh; min-height: 650px; overflow: hidden; border: 1px solid rgba(255,255,255,.18); background: radial-gradient(circle at 50% 42%, rgba(126,47,83,.56), rgba(26,9,20,.5) 46%, #190b18 100%); perspective: 1200px; isolation: isolate; box-shadow: 18px 20px 0 rgba(213,167,126,.17), inset 0 0 100px rgba(0,0,0,.35); }
+.formula-stage { --serum-light: rgba(246,202,157,.5); --serum-pool: rgba(124,47,83,.52); --serum-ambient: rgba(126,47,83,.56); position: sticky; top: 7vh; min-height: 650px; overflow: hidden; border: 1px solid rgba(255,255,255,.18); background: radial-gradient(circle at 50% 42%, var(--serum-ambient), rgba(26,9,20,.5) 46%, #190b18 100%); perspective: 1200px; isolation: isolate; box-shadow: 18px 20px 0 rgba(213,167,126,.17), inset 0 0 100px rgba(0,0,0,.35); transition: background .65s cubic-bezier(.23,1,.32,1), box-shadow .65s cubic-bezier(.23,1,.32,1); }
 .formula-stage::before { content: ""; position: absolute; z-index: -1; inset: 8%; border: 1px solid rgba(232,183,135,.2); border-radius: 50%; transform: translate(var(--pointer-x, 0px), var(--pointer-y, 0px)) scale(1.24); transition: transform .7s cubic-bezier(.23,1,.32,1); }
+.formula-stage::after { content: ""; position: absolute; z-index: 2; inset: 0; pointer-events: none; opacity: .36; background: linear-gradient(112deg, transparent 33%, rgba(255,238,210,.2) 46%, transparent 53%); transform: translateX(-130%); mix-blend-mode: screen; }
 .formula-grid-lines { position: absolute; inset: 0; opacity: .3; background: linear-gradient(90deg, transparent 49.85%, rgba(255,255,255,.26) 50%, transparent 50.15%), linear-gradient(transparent 49.85%, rgba(255,255,255,.18) 50%, transparent 50.15%); }
 .formula-halo { position: absolute; border-radius: 50%; filter: blur(2px); transition: transform .65s cubic-bezier(.23,1,.32,1), background .5s ease; }
 .formula-halo-a { width: 63%; aspect-ratio: 1; left: 19%; top: 18%; background: radial-gradient(circle, rgba(246,200,150,.24), rgba(151,53,94,.12) 44%, transparent 68%); transform: translate(calc(var(--pointer-x, 0px) * -.55), calc(var(--pointer-y, 0px) * -.55)); }
 .formula-halo-b { width: 38%; aspect-ratio: 1; right: 0; bottom: 11%; background: radial-gradient(circle, rgba(210,141,105,.27), transparent 69%); transform: translate(calc(var(--pointer-x, 0px) * .55), calc(var(--pointer-y, 0px) * .55)); }
+.formula-liquid-bed { position: absolute; z-index: 1; left: 50%; bottom: -22%; width: 86%; height: 46%; border-radius: 50%; background: radial-gradient(ellipse at center, var(--serum-pool), rgba(93,34,66,.33) 35%, transparent 69%); filter: blur(11px); transform: translate(calc(-50% + var(--pointer-x, 0px)), calc(var(--pointer-y, 0px) * .22)) rotateX(62deg); transform-origin: center; transition: background .65s cubic-bezier(.23,1,.32,1), transform .65s cubic-bezier(.23,1,.32,1); }
+.formula-surface-reflection { position: absolute; z-index: 2; left: 50%; bottom: 9%; width: 49%; height: 9%; border-radius: 50%; opacity: .42; background: radial-gradient(ellipse, var(--serum-light), transparent 68%); filter: blur(5px); transform: translateX(-50%) rotate(-8deg); transition: background .65s cubic-bezier(.23,1,.32,1), width .65s cubic-bezier(.23,1,.32,1); }
 .formula-orbit { position: absolute; left: 50%; top: 50%; border: 1px solid rgba(235,193,152,.4); border-radius: 50%; transform-style: preserve-3d; pointer-events: none; }
 .formula-orbit span { position: absolute; width: 8px; height: 8px; top: -4px; left: 50%; border-radius: 50%; background: #e9b985; box-shadow: 0 0 18px #e9b985; }
 .formula-orbit-one { width: 83%; height: 33%; transform: translate(-50%, -50%) rotateX(67deg) rotateZ(-17deg); }
 .formula-orbit-two { width: 67%; height: 27%; transform: translate(-50%, -50%) rotateX(67deg) rotateZ(75deg); border-color: rgba(255,255,255,.22); }
-.formula-bottle { position: absolute; z-index: 3; left: 50%; top: 48%; width: min(76%, 430px); aspect-ratio: 4 / 5; transform: translate(calc(-50% + var(--pointer-x, 0px)), calc(-50% + var(--pointer-y, 0px))) rotateX(var(--pointer-rx, 0deg)) rotateY(var(--pointer-ry, 0deg)); transform-style: preserve-3d; transition: transform .55s cubic-bezier(.23,1,.32,1), filter .45s ease; will-change: transform; }
-.formula-bottle img { display: block; width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 42px 28px rgba(0,0,0,.42)); }
+.formula-bottle { position: absolute; z-index: 3; left: 50%; top: 48%; width: min(74%, 412px); aspect-ratio: 4 / 5; transform: translate(calc(-50% + var(--pointer-x, 0px)), calc(-50% + var(--pointer-y, 0px))) rotateX(var(--pointer-rx, 0deg)) rotateY(var(--pointer-ry, 0deg)); transform-style: preserve-3d; transition: transform .55s cubic-bezier(.23,1,.32,1), filter .45s ease; will-change: transform; }
+.formula-bottle::before { content: ""; position: absolute; z-index: -1; left: 50%; bottom: 7%; width: 73%; aspect-ratio: 1/.21; border-radius: 50%; background: radial-gradient(ellipse, rgba(0,0,0,.76), transparent 70%); filter: blur(11px); transform: translateX(-50%) rotateX(58deg); }
+.formula-bottle::after { content: ""; position: absolute; inset: 18% 20% 4%; border-radius: 44% 44% 22% 22%; opacity: .32; background: linear-gradient(105deg, transparent 37%, rgba(255,244,224,.5) 49%, transparent 60%); transform: translateX(-14%) skewX(-12deg); mix-blend-mode: screen; pointer-events: none; }
+.formula-bottle img { display: block; width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 45px 32px rgba(0,0,0,.57)) drop-shadow(0 0 18px rgba(218,145,184,.14)); }
 .formula-glint { position: absolute; top: 20%; left: 34%; width: 10%; height: 45%; border-radius: 50%; opacity: .6; background: linear-gradient(90deg, transparent, rgba(255,249,231,.7), transparent); transform: skewX(-14deg); mix-blend-mode: screen; transition: transform .6s cubic-bezier(.23,1,.32,1), opacity .4s ease; }
 .formula-measure { position: absolute; z-index: 4; color: rgba(255,248,239,.58); font: 8px "DM Mono", monospace; letter-spacing: .12em; }
 .formula-measure-top { top: 19px; left: 22px; }
 .formula-measure-bottom { right: 22px; bottom: 19px; writing-mode: vertical-rl; transform: rotate(180deg); }
 .formula-cursor-note { position: absolute; z-index: 5; left: 22px; bottom: 20px; display: inline-flex; align-items: center; gap: 8px; color: rgba(255,248,239,.7); font: 8px "DM Mono", monospace; letter-spacing: .11em; }
-.formula-stage.mode-1 { background: radial-gradient(circle at 50% 42%, rgba(116,55,101,.72), rgba(26,9,20,.5) 48%, #190b18 100%); }
+.formula-stage.mode-1 { --serum-light: rgba(238,169,211,.58); --serum-pool: rgba(121,59,121,.6); --serum-ambient: rgba(116,55,101,.72); box-shadow: 18px 20px 0 rgba(202,137,180,.2), inset 0 0 100px rgba(0,0,0,.35); }
 .formula-stage.mode-1 .formula-bottle { filter: hue-rotate(9deg) saturate(1.14); }
 .formula-stage.mode-1 .formula-halo-a { background: radial-gradient(circle, rgba(214,149,188,.34), rgba(126,63,129,.14) 44%, transparent 68%); }
-.formula-stage.mode-2 { background: radial-gradient(circle at 50% 42%, rgba(112,77,55,.68), rgba(26,9,20,.5) 48%, #190b18 100%); }
+.formula-stage.mode-2 { --serum-light: rgba(255,224,170,.62); --serum-pool: rgba(127,78,47,.59); --serum-ambient: rgba(112,77,55,.68); box-shadow: 18px 20px 0 rgba(224,183,126,.22), inset 0 0 100px rgba(0,0,0,.35); }
 .formula-stage.mode-2 .formula-bottle { filter: sepia(.12) saturate(1.08); }
 .formula-stage.mode-2 .formula-halo-a { background: radial-gradient(circle, rgba(247,207,153,.35), rgba(158,95,53,.15) 44%, transparent 68%); }
 .formula-story { align-self: center; padding: 40px 0; }
@@ -214,7 +219,8 @@ a { color: inherit; text-decoration: none; }
 .texture-section { position: relative; height: 530px; display: grid; grid-template-columns: 1fr minmax(250px, 35vw) 1fr; overflow: hidden; background: #9d4b69; }
 .texture-visual { position: relative; z-index: 1; overflow: hidden; }
 .texture-visual::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(48,12,31,.25), transparent 50%); }
-.texture-visual img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.05); }
+.texture-visual img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.05); transition: transform 1.2s cubic-bezier(.23,1,.32,1), filter .8s ease; }
+.texture-section:hover .texture-visual img { transform: scale(1.11); filter: saturate(1.08) contrast(1.04); }
 .texture-card { position: relative; z-index: 2; display: flex; flex-direction: column; justify-content: center; padding: 12%; color: #fdf3e6; font: 600 clamp(44px, 6vw, 94px)/.77 "Playfair Display", Georgia, serif; letter-spacing: -.07em; }
 .texture-card-one { align-items: flex-end; text-align: right; background: #2c1223; }
 .texture-card-one span:last-child { color: #dca275; font-style: italic; }
@@ -349,9 +355,13 @@ a { color: inherit; text-decoration: none; }
   .scroll-cue span { display: none; }
   .hero-stamp { display: none; }
   .hero-light-field { width: 90vw; right: -25vw; top: 26%; opacity: .3; }
-  .formula-section { padding: 94px 0; }
-  .formula-stage { min-height: 430px; box-shadow: 9px 10px 0 rgba(213,167,126,.14), inset 0 0 80px rgba(0,0,0,.35); }
-  .formula-bottle { width: 87%; }
+  .section-padding { padding: 82px 0; }
+  .formula-section { padding: 82px 0; }
+  .formula-layout { gap: 28px; margin-top: 44px; }
+  .formula-stage { min-height: 455px; box-shadow: 8px 10px 0 rgba(213,167,126,.14), inset 0 0 80px rgba(0,0,0,.35); }
+  .formula-bottle { width: min(76%, 318px); top: 47%; }
+  .formula-liquid-bed { width: 102%; bottom: -28%; }
+  .formula-surface-reflection { bottom: 12%; width: 58%; }
   .formula-cursor-note { display: none; }
   .formula-story h3 { font-size: 44px; }
   .display-heading { font-size: clamp(43px, 12.8vw, 64px); }
@@ -367,7 +377,9 @@ a { color: inherit; text-decoration: none; }
   .texture-visual { height: 290px; }
   .faq-item button strong { font-size: 18px; }
   .faq-item.open .faq-answer p { padding-left: 0; padding-right: 0; }
-  .contact-section { padding: 95px 0; }
+  .contact-section { padding: 82px 0; }
+  .contact-form input, .contact-form select, .contact-form textarea { font-size: 16px; }
+  .contact-form label { padding: 18px 0; }
   .contact-notes { flex-direction: column; gap: 10px; }
   .footer-main { grid-template-columns: 1fr; gap: 17px; }
   .footer-main p { grid-column: auto; grid-row: auto; }
@@ -379,7 +391,7 @@ a { color: inherit; text-decoration: none; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
-  .hero-media video, .hero-title, .hero-arc-one, .hero-arc-two, .hero-light-field, .formula-stage::before, .formula-halo, .formula-bottle { transform: none !important; }
+  .hero-media video, .hero-title, .hero-arc-one, .hero-arc-two, .hero-light-field, .formula-stage::before, .formula-stage::after, .formula-halo, .formula-liquid-bed, .formula-bottle { transform: none !important; }
   .brand-mark:hover .lens-orbit-primary, .brand-mark:focus-visible .lens-orbit-primary, .brand-mark:hover .lens-orbit-secondary, .brand-mark:focus-visible .lens-orbit-secondary, .brand-mark:hover .lens-light-dot, .brand-mark:focus-visible .lens-light-dot { animation: none !important; }
 }
 
@@ -388,9 +400,13 @@ a { color: inherit; text-decoration: none; }
   .formula-orbit-two { animation: orbit-turn-reverse 13s linear infinite; }
   .formula-bottle { animation: bottle-breathe 6.5s ease-in-out infinite; }
   .formula-glint { animation: glint-sweep 5.4s ease-in-out infinite; }
+  .formula-stage::after { animation: glass-sweep 8.5s ease-in-out infinite; }
+  .formula-surface-reflection { animation: reflection-breathe 5.7s ease-in-out infinite; }
 }
 
 @keyframes orbit-turn { from { transform: translate(-50%, -50%) rotateX(67deg) rotateZ(-17deg); } to { transform: translate(-50%, -50%) rotateX(67deg) rotateZ(343deg); } }
 @keyframes orbit-turn-reverse { from { transform: translate(-50%, -50%) rotateX(67deg) rotateZ(75deg); } to { transform: translate(-50%, -50%) rotateX(67deg) rotateZ(-285deg); } }
 @keyframes bottle-breathe { 0%, 100% { translate: 0 0; } 50% { translate: 0 -8px; } }
 @keyframes glint-sweep { 0%, 65%, 100% { transform: translateX(-35%) skewX(-14deg); opacity: .08; } 77% { transform: translateX(230%) skewX(-14deg); opacity: .78; } }
+@keyframes glass-sweep { 0%, 58%, 100% { transform: translateX(-130%); opacity: 0; } 70% { transform: translateX(120%); opacity: .36; } }
+@keyframes reflection-breathe { 0%, 100% { opacity: .28; scale: .92; } 50% { opacity: .55; scale: 1.06; } }

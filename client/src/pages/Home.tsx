@@ -207,10 +207,12 @@ export default function Home() {
                 <div className="formula-grid-lines" aria-hidden="true" />
                 <div className="formula-halo formula-halo-a" aria-hidden="true" />
                 <div className="formula-halo formula-halo-b" aria-hidden="true" />
+                <div className="formula-liquid-bed" aria-hidden="true" />
+                <div className="formula-surface-reflection" aria-hidden="true" />
                 <div className="formula-orbit formula-orbit-one" aria-hidden="true"><span /></div>
                 <div className="formula-orbit formula-orbit-two" aria-hidden="true"><span /></div>
                 <div className="formula-bottle" aria-hidden="true">
-                  <img src="/manus-storage/dermamatch-serum-3d_91c5a89e.png" alt="" />
+                  <img src="/manus-storage/dermamatch-serum-3d-refined-alpha_ea24100e.png" alt="" loading="lazy" />
                   <div className="formula-glint" />
                 </div>
                 <div className="formula-measure formula-measure-top" aria-hidden="true">0{formulaFocus + 1} / 03</div>
