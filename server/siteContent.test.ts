@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { consultationPlans, faqs, servicePillars } from "../shared/siteContent";
 
-describe("NÛR site content", () => {
+describe("DermaMatch site content", () => {
   it("keeps the consultation journey complete and scannable", () => {
     expect(servicePillars).toHaveLength(3);
     expect(servicePillars.map((pillar) => pillar.number)).toEqual(["01", "02", "03"]);

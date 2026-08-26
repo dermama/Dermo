@@ -17,3 +17,8 @@
 - [x] Üretim derlemesi ve varlık boyutlarıyla performans doğrulaması yapmak; gerekli paket optimizasyonlarını yeniden ölçmek
 - [x] Ana istemci paketini 500 kB altına indirecek statik-site optimizasyonunu derleyip doğrulamak
 - [x] İnceleme sonrası odak, hover ve form geçişlerinde somut mikro etkileşim iyileştirmeleri uygulamak
+- [x] Marka adını DermaMatch olarak kullanıcı arayüzü, meta bilgiler ve doğrulama notlarında tutarlı şekilde güncellemek
+- [x] DermaMatch değişikliğini uygulama dosyaları ve ilgili proje notlarında tarayıp eski marka referanslarını temizlemek
+- [x] Güncellenen başlık, meta bilgi ve görünür marka adını üretim doğrulamasıyla kontrol etmek
+- [x] DermaMatch yeniden adlandırmasından sonra temiz üretim derlemesini çalıştırmak
+- [x] Önizleme üzerinde DermaMatch başlık, meta açıklama ve görünür marka adını belgelemek

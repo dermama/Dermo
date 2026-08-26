@@ -23,7 +23,7 @@ import {
 const navItems = [
   { label: "Yaklaşım", href: "#yaklasim" },
   { label: "Danışmanlıklar", href: "#danismanliklar" },
-  { label: "Neden NÛR", href: "#neden-nur" },
+  { label: "Neden DermaMatch", href: "#neden-dermamatch" },
 ];
 
 function scrollToSection(id: string) {
@@ -46,9 +46,9 @@ export default function Home() {
       <a className="skip-link" href="#icerik">İçeriğe geç</a>
 
       <header className="site-header">
-        <a className="brand-mark" href="#ust" aria-label="NÛR ana sayfa">
+        <a className="brand-mark" href="#ust" aria-label="DermaMatch ana sayfa">
           <span className="brand-orbit" aria-hidden="true" />
-          <span>NÛR</span>
+          <span>DermaMatch</span>
           <small>GÜZELLİK BİLİNCİ</small>
         </a>
 
@@ -70,7 +70,7 @@ export default function Home() {
       {menuOpen && (
         <div className="mobile-menu-overlay" role="dialog" aria-modal="true" aria-label="Mobil navigasyon">
           <div className="mobile-menu-panel">
-            <div className="mobile-menu-top"><span className="mobile-brand">NÛR</span><button aria-label="Menüyü kapat" onClick={() => setMenuOpen(false)}><X size={22} /></button></div>
+            <div className="mobile-menu-top"><span className="mobile-brand">DermaMatch</span><button aria-label="Menüyü kapat" onClick={() => setMenuOpen(false)}><X size={22} /></button></div>
             <p className="mobile-subtitle">Bilinçli güzellik için sakin bir başlangıç.</p>
             <nav className="mobile-nav" aria-label="Mobil navigasyon">
               {navItems.map((item, index) => (
@@ -107,7 +107,7 @@ export default function Home() {
               <h1 className="hero-title reveal-up">Cildinizin<br /><em>sesini</em> dinleyin.</h1>
               <div className="hero-aside reveal-up">
                 <p>Bilimsel merak ile duyusal zarafeti buluşturan, size ait bir bakım ritmi.</p>
-                <button className="circle-play" aria-label="NÛR yaklaşımına git" onClick={() => scrollToSection("#yaklasim")}>
+                <button className="circle-play" aria-label="DermaMatch yaklaşımına git" onClick={() => scrollToSection("#yaklasim")}>
                   <Play size={16} fill="currentColor" aria-hidden="true" />
                   <span>KEŞFET</span>
                 </button>
@@ -120,7 +120,7 @@ export default function Home() {
               </button>
             </div>
           </div>
-          <div className="hero-stamp" aria-hidden="true">NÛR · BAKIMI YAVAŞLAT · NÛR · BAKIMI YAVAŞLAT ·</div>
+          <div className="hero-stamp" aria-hidden="true">DERMAMATCH · BAKIMI YAVAŞLAT · DERMAMATCH · BAKIMI YAVAŞLAT ·</div>
         </section>
 
         <section id="yaklasim" className="manifesto-section section-padding">
@@ -129,17 +129,17 @@ export default function Home() {
             <div className="manifesto-copy">
               <p className="overline reveal-up">Cildinize karşı değil, cildinizle birlikte.</p>
               <h2 className="display-heading reveal-up">Daha <em>az</em> gürültü.<br />Daha çok <em>anlam.</em></h2>
-              <p className="body-large reveal-up">NÛR, cilt bakımını trendlerin temposundan çıkarır. Eczacılık bilgisini; tolerans, içerik ve kullanım alışkanlıklarını anlamak için kullanır. Sonuç, ezberlenmiş bir rutin değil; nedenlerini bildiğiniz bir bakım dilidir.</p>
-              <a className="text-link reveal-up" href="#neden-nur">Yaklaşımın ayrıntıları <ArrowUpRight size={16} /></a>
+              <p className="body-large reveal-up">DermaMatch, cilt bakımını trendlerin temposundan çıkarır. Eczacılık bilgisini; tolerans, içerik ve kullanım alışkanlıklarını anlamak için kullanır. Sonuç, ezberlenmiş bir rutin değil; nedenlerini bildiğiniz bir bakım dilidir.</p>
+              <a className="text-link reveal-up" href="#neden-dermamatch">Yaklaşımın ayrıntıları <ArrowUpRight size={16} /></a>
             </div>
           </div>
-          <div className="manifesto-ribbon" aria-label="NÛR yaklaşımı">ÖNCE DİNLE · SONRA SEÇ · YAVAŞÇA İZLE ·</div>
+          <div className="manifesto-ribbon" aria-label="DermaMatch yaklaşımı">ÖNCE DİNLE · SONRA SEÇ · YAVAŞÇA İZLE ·</div>
         </section>
 
         <section className="editorial-section section-padding">
           <div className="page-shell editorial-grid">
             <div className="editorial-image-wrap reveal-clip">
-              <img src="/manus-storage/noor-pharmacist-editorial_893e3702.png" alt="NÛR yaklaşımını temsil eden eczacı portresi" loading="lazy" />
+              <img src="/manus-storage/noor-pharmacist-editorial_893e3702.png" alt="DermaMatch yaklaşımını temsil eden eczacı portresi" loading="lazy" />
               <span className="image-caption">BİLİM · DUYU · DENGE</span>
             </div>
             <div className="editorial-message">
@@ -148,15 +148,15 @@ export default function Home() {
               <p className="body-copy reveal-up">Bir cilt rutini, duş rafınızdaki adımların toplamı değildir. Uyku, mevsim, stres, doku tercihi ve süreklilik; aynı hikâyenin farklı satırlarıdır. Görüşmelerimiz bu satırları birlikte okumak için tasarlanır.</p>
               <div className="signature-row reveal-up">
                 <div className="signature-orb"><Sparkles size={18} /></div>
-                <div><strong>Ritüel, farkındalıkla başlar.</strong><span>— NÛR yaklaşımı</span></div>
+                <div><strong>Ritüel, farkındalıkla başlar.</strong><span>— DermaMatch yaklaşımı</span></div>
               </div>
             </div>
           </div>
         </section>
 
-        <section id="neden-nur" className="pillars-section">
+        <section id="neden-dermamatch" className="pillars-section">
           <div className="page-shell pillars-intro">
-            <div className="manifesto-label light reveal-up"><span>NÛR METODU</span><span>(03)</span></div>
+            <div className="manifesto-label light reveal-up"><span>DERMAMATCH METODU</span><span>(03)</span></div>
             <h2 className="display-heading inverse reveal-up">Üç sade<br />hareket.</h2>
             <p className="body-copy inverse-soft reveal-up">Her görüşme, cildi hedef alan değil; ciltle ortaklık kuran bir sistemin başlangıcıdır.</p>
           </div>
@@ -223,7 +223,7 @@ export default function Home() {
             <div className="faq-intro">
               <span className="overline reveal-up">BİLMEK İSTEYEBİLECEKLERİNİZ</span>
               <h2 className="display-heading reveal-up">Sakin bir<br /><em>başlangıç</em> için.</h2>
-              <p className="body-copy reveal-up">Danışmanlık sürecini açık ve anlaşılır tutmak, NÛR’ün bakım anlayışının bir parçasıdır.</p>
+              <p className="body-copy reveal-up">Danışmanlık sürecini açık ve anlaşılır tutmak, DermaMatch’in bakım anlayışının bir parçasıdır.</p>
             </div>
             <div className="faq-list">
               {faqs.map((faq, index) => (
@@ -262,8 +262,8 @@ export default function Home() {
       </main>
 
       <footer className="site-footer">
-        <div className="page-shell footer-main"><a className="footer-logo" href="#ust">NÛR</a><p>Bilimle şekillenen, size ait güzellik ritüelleri.</p><a href="mailto:merhaba@nur.com">merhaba@nur.com <ArrowUpRight size={14} /></a></div>
-        <div className="page-shell footer-bottom"><span>© 2026 NÛR</span><span>İstanbul · Online</span><button onClick={() => scrollToSection("#ust")}>Yukarı dön <ArrowUpRight size={14} /></button></div>
+        <div className="page-shell footer-main"><a className="footer-logo" href="#ust">DermaMatch</a><p>Bilimle şekillenen, size ait güzellik ritüelleri.</p><a href="mailto:merhaba@dermamatch.com">merhaba@dermamatch.com <ArrowUpRight size={14} /></a></div>
+        <div className="page-shell footer-bottom"><span>© 2026 DermaMatch</span><span>İstanbul · Online</span><button onClick={() => scrollToSection("#ust")}>Yukarı dön <ArrowUpRight size={14} /></button></div>
       </footer>
     </div>
   );

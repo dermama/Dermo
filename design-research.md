@@ -1,8 +1,8 @@
-# Tasarım Araştırması — NÛR
+# Tasarım Araştırması — DermaMatch
 
 İncelenen kaynaklar, lüks dijital deneyimlerde bol negatif alan, geniş ekranı dolduran atmosferik görseller, az ama kesin navigasyon ve güçlü tipografik hiyerarşi kullanıldığını gösteriyor. Awwwards’ın lüks seçkisi, farklı kategorilerdeki siteleri kart bazlı bir galeri halinde sunuyor; bu yaklaşım, seçkili ve duru bir etki için daha az ancak daha belirgin görsel an kullanma kararını destekliyor.[^1]
 
-Eleken’in tasarım örnekleri derlemesi; cesur tipografinin, katmanlı görsel hikâye anlatımının, ölçülü etkileşimlerin ve mobil uyumun birlikte güçlü bir kullanıcı deneyimi oluşturduğunu vurguluyor.[^2] Bu bulgulara dayanarak NÛR, klinik görünmek yerine bilimsel güveni editoryal zarafetle birleştiren bir dijital deneyim olarak tasarlanacaktır.
+Eleken’in tasarım örnekleri derlemesi; cesur tipografinin, katmanlı görsel hikâye anlatımının, ölçülü etkileşimlerin ve mobil uyumun birlikte güçlü bir kullanıcı deneyimi oluşturduğunu vurguluyor.[^2] Bu bulgulara dayanarak DermaMatch, klinik görünmek yerine bilimsel güveni editoryal zarafetle birleştiren bir dijital deneyim olarak tasarlanacaktır.
 
 | Tasarım kararı | Uygulama biçimi |
 | --- | --- |
