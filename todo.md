@@ -50,6 +50,6 @@
 - [ ] DermaMatch için yeni GitHub deposu oluşturup yazma erişimini doğrulamak
 - [ ] Mevcut DermaMatch proje geçmişini yeni GitHub deposuna aktarmak
 - [ ] Yeni GitHub deposundaki dosyaları ve varsayılan dalı doğrulamak
-- [ ] Eski `dermama/Dermo` deposuna yeniden yazma erişimini doğrulamak
-- [ ] DermaMatch projesini eski `dermama/Dermo` deposuna aktarmak
-- [ ] Eski depodaki aktarılan proje içeriğini doğrulamak
+- [x] Eski `dermama/Dermo` deposuna yeniden yazma erişimini doğrulamak
+- [x] DermaMatch projesini eski `dermama/Dermo` deposuna aktarmak
+- [x] Eski depodaki aktarılan proje içeriğini doğrulamak
