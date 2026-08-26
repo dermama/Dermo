@@ -1,4 +1,4 @@
-import { useState, type FormEvent } from "react";
+import { useRef, useState, type FormEvent, type PointerEvent, type RefObject } from "react";
 import {
   ArrowDown,
   ArrowRight,
@@ -9,6 +9,8 @@ import {
   FlaskConical,
   Menu,
   Play,
+  MousePointer2,
+  Orbit,
   ScanFace,
   ShieldCheck,
   Sparkles,
@@ -17,6 +19,7 @@ import {
 import {
   consultationPlans,
   faqs,
+  formulaModes,
   servicePillars,
 } from "@shared/siteContent";
 
@@ -35,10 +38,32 @@ export default function Home() {
   const [selectedPlan, setSelectedPlan] = useState(0);
   const [openFaq, setOpenFaq] = useState(0);
   const [submitted, setSubmitted] = useState(false);
+  const [formulaFocus, setFormulaFocus] = useState(0);
+  const heroRef = useRef<HTMLElement>(null);
+  const productStageRef = useRef<HTMLDivElement>(null);
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setSubmitted(true);
+  };
+
+  const updateParallax = (event: PointerEvent<HTMLElement>, target: RefObject<HTMLElement | null>, intensity: number) => {
+    const element = target.current;
+    if (!element || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const rect = element.getBoundingClientRect();
+    const x = (event.clientX - rect.left) / rect.width - 0.5;
+    const y = (event.clientY - rect.top) / rect.height - 0.5;
+    element.style.setProperty("--pointer-x", `${x * intensity}px`);
+    element.style.setProperty("--pointer-y", `${y * intensity}px`);
+    element.style.setProperty("--pointer-rx", `${-y * 7}deg`);
+    element.style.setProperty("--pointer-ry", `${x * 9}deg`);
+  };
+
+  const resetParallax = (target: RefObject<HTMLElement | null>) => {
+    target.current?.style.setProperty("--pointer-x", "0px");
+    target.current?.style.setProperty("--pointer-y", "0px");
+    target.current?.style.setProperty("--pointer-rx", "0deg");
+    target.current?.style.setProperty("--pointer-ry", "0deg");
   };
 
   return (
@@ -87,7 +112,7 @@ export default function Home() {
       )}
 
       <main id="icerik">
-        <section id="ust" className="hero-section">
+        <section id="ust" className="hero-section" ref={heroRef} onPointerMove={(event) => updateParallax(event, heroRef, 15)} onPointerLeave={() => resetParallax(heroRef)}>
           <div className="hero-media" aria-hidden="true">
             <video autoPlay muted loop playsInline poster="/manus-storage/noor-hero-editorial_eeba30cf.png">
               <source src="/manus-storage/noor-liquid-ambient_4319808e.mp4" type="video/mp4" />
@@ -95,6 +120,7 @@ export default function Home() {
             <div className="hero-overlay" />
             <div className="hero-grain" />
           </div>
+          <div className="hero-light-field" aria-hidden="true" />
           <div className="hero-arc hero-arc-one" aria-hidden="true" />
           <div className="hero-arc hero-arc-two" aria-hidden="true" />
           <div className="hero-content page-shell">
@@ -134,6 +160,64 @@ export default function Home() {
             </div>
           </div>
           <div className="manifesto-ribbon" aria-label="DermaMatch yaklaşımı">ÖNCE DİNLE · SONRA SEÇ · YAVAŞÇA İZLE ·</div>
+        </section>
+
+        <section className="formula-section" aria-labelledby="formula-title">
+          <div className="formula-ambient formula-ambient-one" aria-hidden="true" />
+          <div className="formula-ambient formula-ambient-two" aria-hidden="true" />
+          <div className="page-shell formula-intro">
+            <div className="manifesto-label light"><span>FORMULA EXPLORER</span><span>(02)</span></div>
+            <div>
+              <p className="overline light">ETKİLEŞİMLİ BAKIM PERSPEKTİFİ</p>
+              <h2 id="formula-title" className="display-heading inverse">Bakımın <em>derinliği,</em><br />dokununca değişir.</h2>
+            </div>
+          </div>
+          <div className="page-shell formula-layout">
+            <div className="formula-stage-wrap">
+              <div
+                ref={productStageRef}
+                className={`formula-stage mode-${formulaFocus}`}
+                onPointerMove={(event) => updateParallax(event, productStageRef, 18)}
+                onPointerLeave={() => resetParallax(productStageRef)}
+                aria-label="İmleç hareketine yanıt veren DermaMatch ürün görseli"
+              >
+                <div className="formula-grid-lines" aria-hidden="true" />
+                <div className="formula-halo formula-halo-a" aria-hidden="true" />
+                <div className="formula-halo formula-halo-b" aria-hidden="true" />
+                <div className="formula-orbit formula-orbit-one" aria-hidden="true"><span /></div>
+                <div className="formula-orbit formula-orbit-two" aria-hidden="true"><span /></div>
+                <div className="formula-bottle" aria-hidden="true">
+                  <img src="/manus-storage/dermamatch-serum-3d_91c5a89e.png" alt="" />
+                  <div className="formula-glint" />
+                </div>
+                <div className="formula-measure formula-measure-top" aria-hidden="true">0{formulaFocus + 1} / 03</div>
+                <div className="formula-measure formula-measure-bottom" aria-hidden="true">DERMAMATCH · RITUAL STUDY</div>
+                <div className="formula-cursor-note"><MousePointer2 size={14} /><span>HAREKET ETTİRİN</span></div>
+              </div>
+            </div>
+            <div className="formula-story">
+              <p className="formula-kicker">{formulaModes[formulaFocus].number} — {formulaModes[formulaFocus].name.toUpperCase()}</p>
+              <h3>{formulaModes[formulaFocus].title}</h3>
+              <p>{formulaModes[formulaFocus].description}</p>
+              <p className="formula-note">“{formulaModes[formulaFocus].note}”</p>
+              <div className="formula-selector" role="tablist" aria-label="Bakım odağını seçin">
+                {formulaModes.map((mode, index) => (
+                  <button
+                    key={mode.name}
+                    type="button"
+                    role="tab"
+                    aria-selected={formulaFocus === index}
+                    className={formulaFocus === index ? "active" : ""}
+                    onClick={() => setFormulaFocus(index)}
+                    onFocus={() => setFormulaFocus(index)}
+                    onMouseEnter={() => setFormulaFocus(index)}
+                  >
+                    <span>{mode.number}</span><strong>{mode.name}</strong><Orbit size={16} />
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
         </section>
 
         <section className="editorial-section section-padding">

@@ -13,6 +13,38 @@ export type ConsultationPlan = {
   includes: string[];
 };
 
+export type FormulaMode = {
+  number: string;
+  name: string;
+  title: string;
+  description: string;
+  note: string;
+};
+
+export const formulaModes: FormulaMode[] = [
+  {
+    number: "01",
+    name: "Dengele",
+    title: "Cildin ritmini okuyun.",
+    description: "Hissettiğiniz kuruluk, parlama ya da hassasiyet; tek bir etiket değil, cildin gün içindeki hareketidir.",
+    note: "Doku önce gelir.",
+  },
+  {
+    number: "02",
+    name: "Seç",
+    title: "Azaltın, netleştirin.",
+    description: "Bakım kararlarını daha çok adım ekleyerek değil, hangi adımın gerçekten size eşlik ettiğini anlayarak kurarız.",
+    note: "Seçicilik bir ritüeldir.",
+  },
+  {
+    number: "03",
+    name: "Koru",
+    title: "Işığı uzun vadede taşıyın.",
+    description: "Mevsim ve tempo değiştikçe bakım da değişir. Ama iyi bir rutin, neden var olduğunu unutturmaz.",
+    note: "Süreklilik, en sessiz ışıktır.",
+  },
+];
+
 export const servicePillars: ServicePillar[] = [
   {
     number: "01",

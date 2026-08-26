@@ -22,3 +22,11 @@
 - [x] Güncellenen başlık, meta bilgi ve görünür marka adını üretim doğrulamasıyla kontrol etmek
 - [x] DermaMatch yeniden adlandırmasından sonra temiz üretim derlemesini çalıştırmak
 - [x] Önizleme üzerinde DermaMatch başlık, meta açıklama ve görünür marka adını belgelemek
+- [x] Üst düzey güzellik ve ürün sitelerindeki 3B, parallax ve sinematik hareket referanslarını araştırmak
+- [x] DermaMatch için ölçülü hareket, parallax ve 3B ürün anlatımı içeren deneyim planını hazırlamak
+- [x] Hero atmosferini yeni hareketli görsel/video katmanlarıyla zenginleştirmek
+- [x] Kullanıcının imleç ve kaydırma hareketine yanıt veren 3B ürün keşif modülünü uygulamak
+- [x] Bölüm geçişlerini, görsel parallax katmanlarını ve mikro etkileşimleri yenilemek
+- [x] Formula Explorer içerik modelini ve üç aşamalı etkileşim dizisini otomatik testle doğrulamak
+- [x] Görsel yenileme sonrası üretim paketini code-splitting ile doğrulamak
+- [x] Yenilenen deneyimin performansını, azaltılmış hareket desteğini ve mobil davranışını doğrulamak
