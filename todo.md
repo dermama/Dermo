@@ -44,3 +44,6 @@
 - [x] Yeni serum sahnesini seçili modlara tepki veren ışık ve derinlik efektleriyle entegre etmek
 - [x] Serum render’ındaki görünür dama arka planını, sahneyle kusursuz birleşen koyu görsel katmanla düzeltmek
 - [x] Geliştirilen deneyimi geniş ekran, tablet, telefon, azaltılmış hareket ve üretim derlemesinde doğrulamak
+- [x] DermaMatch projesinin GitHub aktarımı için depo erişimini ve yerel Git durumunu doğrulamak
+- [ ] Mevcut proje dosyalarını git@github.com:dermama/Dermo.git deposuna sürümleyip yüklemek
+- [ ] Uzak GitHub deposundaki aktarılan proje içeriğini doğrulamak
