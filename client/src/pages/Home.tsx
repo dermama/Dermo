@@ -137,8 +137,8 @@ export default function Home() {
       <main id="icerik">
         <section id="ust" className="hero-section" ref={heroRef} onPointerMove={(event) => updateParallax(event, heroRef, 15)} onPointerLeave={() => resetParallax(heroRef)}>
           <div className="hero-media" aria-hidden="true">
-            <video autoPlay muted loop playsInline poster="/manus-storage/noor-hero-editorial_eeba30cf.png">
-              <source src="/manus-storage/noor-liquid-ambient_4319808e.mp4" type="video/mp4" />
+            <video autoPlay muted loop playsInline poster="https://files.manuscdn.com/user_upload_by_module/session_file/310519663179003784/uSHvrwooTCECBERn.png">
+              <source src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663179003784/jhlGVvtScMYbZZbi.mp4" type="video/mp4" />
             </video>
             <div className="hero-overlay" />
             <div className="hero-grain" />
@@ -212,7 +212,7 @@ export default function Home() {
                 <div className="formula-orbit formula-orbit-one" aria-hidden="true"><span /></div>
                 <div className="formula-orbit formula-orbit-two" aria-hidden="true"><span /></div>
                 <div className="formula-bottle" aria-hidden="true">
-                  <img src="/manus-storage/dermamatch-serum-3d-refined-alpha_ea24100e.png" alt="" loading="lazy" />
+                  <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663179003784/srXddtPLFdTKyvUX.png" alt="" loading="lazy" />
                   <div className="formula-glint" />
                 </div>
                 <div className="formula-measure formula-measure-top" aria-hidden="true">0{formulaFocus + 1} / 03</div>
@@ -248,7 +248,7 @@ export default function Home() {
         <section className="editorial-section section-padding">
           <div className="page-shell editorial-grid">
             <div className="editorial-image-wrap reveal-clip">
-              <img src="/manus-storage/noor-pharmacist-editorial_893e3702.png" alt="DermaMatch yaklaşımını temsil eden eczacı portresi" loading="lazy" />
+              <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663179003784/eKTpkuwNFWybZurK.png" alt="DermaMatch yaklaşımını temsil eden eczacı portresi" loading="lazy" />
               <span className="image-caption">BİLİM · DUYU · DENGE</span>
             </div>
             <div className="editorial-message">
@@ -323,7 +323,7 @@ export default function Home() {
 
         <section className="texture-section">
           <div className="texture-card texture-card-one"><span>SOFT</span><span>SCIENCE</span></div>
-          <div className="texture-visual"><img src="/manus-storage/noor-ingredient-still-life_8d26945b.png" alt="Serum dokusu ve mat camdan oluşan soyut bakım kompozisyonu" loading="lazy" /></div>
+          <div className="texture-visual"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663179003784/VhOCOuwUNkhUWSYb.png" alt="Serum dokusu ve mat camdan oluşan soyut bakım kompozisyonu" loading="lazy" /></div>
           <div className="texture-card texture-card-two"><span>RITUAL</span><span>OVER</span><span>RUSH</span></div>
         </section>
 
@@ -371,7 +371,7 @@ export default function Home() {
       </main>
 
       <footer className="site-footer">
-        <div className="page-shell footer-main"><a className="footer-logo" href="#ust"><DermaLensMark /> <span>DermaMatch</span></a><p>Bilimle şekillenen, size ait güzellik ritüelleri.</p><a href="mailto:merhaba@dermamatch.com">merhaba@dermamatch.com <ArrowUpRight size={14} /></a><span className="footer-lens-render" aria-hidden="true"><img src="/manus-storage/dermamatch-derma-lens-mark_51cee3be.png" alt="" loading="lazy" /></span></div>
+        <div className="page-shell footer-main"><a className="footer-logo" href="#ust"><DermaLensMark /> <span>DermaMatch</span></a><p>Bilimle şekillenen, size ait güzellik ritüelleri.</p><a href="mailto:merhaba@dermamatch.com">merhaba@dermamatch.com <ArrowUpRight size={14} /></a><span className="footer-lens-render" aria-hidden="true"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663179003784/HziDeVUjEDpXQIdl.png" alt="" loading="lazy" /></span></div>
         <div className="page-shell footer-bottom"><span>© 2026 DermaMatch</span><span>İstanbul · Online</span><button onClick={() => scrollToSection("#ust")}>Yukarı dön <ArrowUpRight size={14} /></button></div>
       </footer>
     </div>

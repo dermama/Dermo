@@ -45,11 +45,20 @@
 - [x] Serum render’ındaki görünür dama arka planını, sahneyle kusursuz birleşen koyu görsel katmanla düzeltmek
 - [x] Geliştirilen deneyimi geniş ekran, tablet, telefon, azaltılmış hareket ve üretim derlemesinde doğrulamak
 - [x] DermaMatch projesinin GitHub aktarımı için depo erişimini ve yerel Git durumunu doğrulamak
-- [ ] Mevcut proje dosyalarını git@github.com:dermama/Dermo.git deposuna sürümleyip yüklemek
-- [ ] Uzak GitHub deposundaki aktarılan proje içeriğini doğrulamak
+- [x] Mevcut proje dosyalarını git@github.com:dermama/Dermo.git deposuna sürümleyip yüklemek
+- [x] Uzak GitHub deposundaki aktarılan proje içeriğini doğrulamak
 - [ ] DermaMatch için yeni GitHub deposu oluşturup yazma erişimini doğrulamak
 - [ ] Mevcut DermaMatch proje geçmişini yeni GitHub deposuna aktarmak
 - [ ] Yeni GitHub deposundaki dosyaları ve varsayılan dalı doğrulamak
 - [x] Eski `dermama/Dermo` deposuna yeniden yazma erişimini doğrulamak
 - [x] DermaMatch projesini eski `dermama/Dermo` deposuna aktarmak
 - [x] Eski depodaki aktarılan proje içeriğini doğrulamak
+- [ ] Kullanıcının paylaştığı Vercel dağıtım hatasının kök nedenini belirlemek
+- [x] Vercel için statik istemci dağıtımı ve gerekli yönlendirme yapılandırmasını eklemek
+- [x] Vercel üretim derlemesini yerelde doğrulamak ve dağıtım ortam değişkenlerini belgelemek
+- [ ] Vercel dağıtım hazırlığını GitHub deposuna aktarmak
+- [x] Vercel hata kaydındaki gerçek başarısızlık satırını belgeleyerek kök neden çıkarımını doğrulamak
+- [x] Vercel yapılandırması, dağıtım notu ve Vercel erişilebilir medya URL’lerini dosya bazında doğrulamak
+- [x] `pnpm exec vite build` ile `dist/public` Vercel çıktısını yeniden üretip doğrulamak
+- [ ] Vercel’in gerçek başarısızlık satırını kullanıcıdan alıp tanı notuyla eşleştirmek
+- [x] Güncellenmiş Vercel tanı ve dağıtım notunun dosyada bulunduğunu yeniden doğrulamak
