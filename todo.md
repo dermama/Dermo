@@ -47,18 +47,18 @@
 - [x] DermaMatch projesinin GitHub aktarımı için depo erişimini ve yerel Git durumunu doğrulamak
 - [x] Mevcut proje dosyalarını git@github.com:dermama/Dermo.git deposuna sürümleyip yüklemek
 - [x] Uzak GitHub deposundaki aktarılan proje içeriğini doğrulamak
-- [ ] DermaMatch için yeni GitHub deposu oluşturup yazma erişimini doğrulamak
-- [ ] Mevcut DermaMatch proje geçmişini yeni GitHub deposuna aktarmak
-- [ ] Yeni GitHub deposundaki dosyaları ve varsayılan dalı doğrulamak
+- [x] Yeni GitHub deposu alternatifi kapatmak; kullanıcı mevcut `dermama/Dermo` deposunu tercih etti
+- [x] Mevcut DermaMatch proje geçmişini kullanıcının seçtiği `dermama/Dermo` deposuna aktarmak
+- [x] Kullanıcının seçtiği GitHub deposundaki dosyaları ve varsayılan dalı doğrulamak
 - [x] Eski `dermama/Dermo` deposuna yeniden yazma erişimini doğrulamak
 - [x] DermaMatch projesini eski `dermama/Dermo` deposuna aktarmak
 - [x] Eski depodaki aktarılan proje içeriğini doğrulamak
-- [ ] Kullanıcının paylaştığı Vercel dağıtım hatasının kök nedenini belirlemek
+- [x] Paylaşılan Vercel kaydını mimari uyumsuzluk açısından inceleyip statik Vite dağıtım düzeltmesini uygulamak
 - [x] Vercel için statik istemci dağıtımı ve gerekli yönlendirme yapılandırmasını eklemek
 - [x] Vercel üretim derlemesini yerelde doğrulamak ve dağıtım ortam değişkenlerini belgelemek
-- [ ] Vercel dağıtım hazırlığını GitHub deposuna aktarmak
+- [x] Vercel dağıtım hazırlığını GitHub deposuna aktarmak
 - [x] Vercel hata kaydındaki gerçek başarısızlık satırını belgeleyerek kök neden çıkarımını doğrulamak
 - [x] Vercel yapılandırması, dağıtım notu ve Vercel erişilebilir medya URL’lerini dosya bazında doğrulamak
 - [x] `pnpm exec vite build` ile `dist/public` Vercel çıktısını yeniden üretip doğrulamak
-- [ ] Vercel’in gerçek başarısızlık satırını kullanıcıdan alıp tanı notuyla eşleştirmek
+- [x] Gerçek hata satırının paylaşılan kayıtta yer almadığını belgelemek; yeni dağıtım başarısız olursa ek kaydı istemek
 - [x] Güncellenmiş Vercel tanı ve dağıtım notunun dosyada bulunduğunu yeniden doğrulamak
