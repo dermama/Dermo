@@ -63,7 +63,7 @@
 - [x] Gerçek hata satırının paylaşılan kayıtta yer almadığını belgelemek; yeni dağıtım başarısız olursa ek kaydı istemek
 - [x] Güncellenmiş Vercel tanı ve dağıtım notunun dosyada bulunduğunu yeniden doğrulamak
 - [x] İletişim formu için e-posta, WhatsApp veya karma teslim yaklaşımını belirlemek — kapsam, güvenli randevu ve görüşme sistemiyle değiştirildi
-- [x] Seçilen kanalın hedef bilgilerini ve gerekli güvenli yapılandırmayı almak — Vercel/Neon/Resend ortam değişkenleriyle değiştirildi
+- [x] Seçilen kanalın hedef bilgilerini ve gerekli güvenli yapılandırmayı almak — Vercel/Neon/Gmail SMTP ortam değişkenleriyle değiştirildi
 - [x] Form gönderimini seçilen teslim kanalına bağlamak ve kullanıcı geri bildirimlerini güncellemek — gerçek başvuru değerlendirme akışıyla değiştirildi
 - [x] Teslim akışını uçtan uca test edip dağıtım ortamındaki ayarları doğrulamak — Vercel üretim E2E doğrulama görevi altında birleştirildi
 - [x] Randevu başvurusu, yönetici erişimi, görüşme odası ve mesajlaşma için veri modellerini tanımlamak
@@ -71,7 +71,7 @@
 - [x] Parola korumalı ayrı yönetim alanı ve başvuru yönetimi ekranını oluşturmak
 - [x] Başvuru onayı sonrası yedi gün geçerli benzersiz görüşme bağlantısı üretmek ve erişimi denetlemek
 - [x] Kabul edilmiş başvurular için zarif, mobil uyumlu site içi mesajlaşma odası oluşturmak
-- [ ] Onay e-postası teslimi ve isteğe bağlı Instagram/Threads yönlendirmesi için yapılandırma eklemek
+- [x] Onay e-postası teslimi ve isteğe bağlı Instagram/Threads yönlendirmesi için Resend yapılandırmasını planlamak — kullanıcı isteğiyle Gmail SMTP ile değiştirildi
 - [x] Randevu sistemi, süreli erişim, onam kayıtları ve mesajlaşma akışını birim testleriyle kapsamak
 - [x] Vercel Functions ve güvenli yönetim yetkisi için üretim mimarisini doğrulamak
 - [ ] Vercel uyumlu veri katmanını ve gizli yapılandırma gereksinimlerini üretim Neon veritabanında uygulamak
@@ -88,6 +88,7 @@
 - [x] Vercel danışmanlık işlevini üretim bağımlılıkları gömülü bağımsız bir paket olarak derlemek
 - [x] Üretim bağımlılıkları gömülü Vercel API paketini kaynakla birlikte yayınlayarak doğrulamak
 - [x] Vercel API paketinde CommonJS çalışma zamanını doğrulamak
-- [ ] Vercel üretim ortamında e-posta kabul bildirimi ve süreli görüşme bağlantısını doğrulamak
+- [x] Gmail SMTP ile kabul e-postası teslimini ve isteğe bağlı Instagram/Threads yönlendirmesini kod düzeyinde yapılandırmak
+- [ ] Vercel üretim ortamında Gmail kabul bildirimi ve süreli görüşme bağlantısını doğrulamak
 - [x] Geçici Vercel tanılama uçlarını üretim paketinden kaldırmak
 - [x] Geçici API yollarının SPA fallback yerine 404 döndürdüğünü canlıda doğrulamak

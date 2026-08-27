@@ -1,6 +1,6 @@
 # DermaMatch — Vercel Dağıtım Notu
 
-DermaMatch; **Vite istemcisi**, Vercel’in `/api/trpc.js` CommonJS fonksiyonu, **Neon Postgres** ve **Resend** birlikte kullanılarak dağıtılır. `vercel.json` Vite çıktısını `dist/public` altında sunar; Vercel, proje kökündeki `api/` dosyalarını ayrıca Functions olarak algılar. Bu nedenle `/yonetim`, `/gorusme/:benzersiz-token` ve ana sayfa istemci taraflı SPA yollarıdır; `/api/trpc/*` ise dinamik arka uç yoludur.[^1][^2]
+DermaMatch; **Vite istemcisi**, Vercel’in `/api/trpc.js` CommonJS fonksiyonu, **Neon Postgres** ve **Gmail SMTP** birlikte kullanılarak dağıtılır. `vercel.json` Vite çıktısını `dist/public` altında sunar; Vercel, proje kökündeki `api/` dosyalarını ayrıca Functions olarak algılar. Bu nedenle `/yonetim`, `/gorusme/:benzersiz-token` ve ana sayfa istemci taraflı SPA yollarıdır; `/api/trpc/*` ise dinamik arka uç yoludur.[^1][^2]
 
 ## Mimari ve güvenlik sınırları
 
@@ -9,11 +9,11 @@ DermaMatch; **Vite istemcisi**, Vercel’in `/api/trpc.js` CommonJS fonksiyonu, 
 | İstemci | React + Vite + Wouter | Başvuru formu, yönetim alanı ve görüşme odası |
 | API | `api/trpc.js` | Başvuru, yönetim parolası, token doğrulaması ve mesajlaşma |
 | Veri | Neon Postgres + Drizzle | Başvurular, onam zamanları, token hash’leri, oturumlar ve mesajlar |
-| E-posta | Resend | Kabul bildirimi ve özel görüşme URL’si |
+| E-posta | Gmail SMTP | Kabul bildirimi ve özel görüşme URL’si |
 
 Ham görüşme tokeni yalnız kabul anında üretilir ve e-postaya eklenir; veritabanında yalnız SHA-256 hash’i saklanır. Görüşme erişimi tam olarak yedi gün sonra sona erer; yönetici oturumu ayrıca on iki saatlik imzalı, `httpOnly` çerez kullanır. Yönetici bir görüşmeyi kapattığında ilgili URL anında geçersiz olur.
 
-`pnpm run vercel-build`, kaynak dosya `server/vercel/trpc.ts` içinden sürümlenmiş `api/trpc.js` CommonJS paketini üretir. Bu paket tRPC, Drizzle, Neon, Resend ve token güvenliği bağımlılıklarını işlevin içine alır; `api/trpc.js` elle düzenlenmemelidir. Değişiklikler kaynak TypeScript dosyasında yapılmalı ve ardından bu derleme komutu çalıştırılmalıdır.
+`pnpm run vercel-build`, kaynak dosya `server/vercel/trpc.ts` içinden sürümlenmiş `api/trpc.js` CommonJS paketini üretir. Bu paket tRPC, Drizzle, Neon, Nodemailer ve token güvenliği bağımlılıklarını işlevin içine alır; `api/trpc.js` elle düzenlenmemelidir. Değişiklikler kaynak TypeScript dosyasında yapılmalı ve ardından bu derleme komutu çalıştırılmalıdır.
 
 ## Gerekli Vercel ortam değişkenleri
 
@@ -22,13 +22,15 @@ Ham görüşme tokeni yalnız kabul anında üretilir ve e-postaya eklenir; veri
 | `DATABASE_URL` | Neon Vercel entegrasyonu | Zorunlu |
 | `JWT_SECRET` | Güçlü rastgele sunucu sırrı | Zorunlu |
 | `ADMIN_DASHBOARD_PASSWORD` | Yönetici tarafından belirlenen güçlü parola | Zorunlu |
-| `RESEND_API_KEY` | Resend | E-posta kabul bildirimi için zorunlu |
-| `RESEND_FROM_EMAIL` | Doğrulanmış Resend alan adıyla gönderen | E-posta kabul bildirimi için zorunlu |
+| `GMAIL_SMTP_USER` | Gönderim yapacak Gmail adresi | E-posta kabul bildirimi için zorunlu |
+| `GMAIL_SMTP_APP_PASSWORD` | Google Account App Password | E-posta kabul bildirimi için zorunlu |
 | `PUBLIC_APP_URL` | Canlı DermaMatch alan adı | Zorunlu |
 | `INSTAGRAM_URL` | İsteğe bağlı profil URL’si | İsteğe bağlı |
 | `THREADS_URL` | İsteğe bağlı profil URL’si | İsteğe bağlı |
 
-> `RESEND_FROM_EMAIL` üretimde doğrulanmış bir alan adına ait olmalıdır. API anahtarları, parolalar ve tokenler kaynak koda veya GitHub deposuna yazılmaz.[^3]
+> Gmail hesabınızda iki adımlı doğrulama açık olmalı ve `GMAIL_SMTP_APP_PASSWORD` olarak normal Gmail parolası değil, Google’ın ürettiği 16 haneli **App Password** kullanılmalıdır. Bu App Password kaynak koda veya GitHub deposuna kesinlikle yazılmaz.[^3]
+
+Gmail ile gönderim için Google Account → Security → App Passwords alanından, DermaMatch adına yeni bir App Password oluşturun. Vercel Production ortamında yalnızca Gmail adresini `GMAIL_SMTP_USER`, üretilen App Password değerini ise `GMAIL_SMTP_APP_PASSWORD` olarak saklayın. Hesabın normal Gmail parolasını hiçbir yerde kullanmayın.
 
 ## Neon migration uygulaması
 
@@ -51,4 +53,4 @@ Migration; yalnız yeni enum, tablo, unique constraint ve foreign key oluşturur
 
 [^1]: [Vercel — Vite on Vercel](https://vercel.com/docs/frameworks/frontend/vite)
 [^2]: [Vercel — Node.js Runtime](https://vercel.com/docs/functions/runtimes/node-js)
-[^3]: [Resend — Vercel Functions ile e-posta gönderimi](https://resend.com/docs/send-with-vercel-functions)
+[^3]: [Google Account Help — Sign in with app passwords](https://support.google.com/mail/answer/185833?hl=en)
