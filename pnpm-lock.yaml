@@ -110,6 +110,9 @@ importers:
       '@trpc/server':
         specifier: ^11.6.0
         version: 11.18.0(typescript@5.9.3)
+      '@types/express':
+        specifier: 4.17.21
+        version: 4.17.21
       '@vercel/node':
         specifier: ^8.1.0
         version: 8.1.0(@emnapi/core@1.11.3)(@emnapi/runtime@1.11.3)(@vercel/build-utils@14.5.0)(rollup@4.63.0)
@@ -219,9 +222,6 @@ importers:
       '@tailwindcss/vite':
         specifier: ^4.1.3
         version: 4.3.3(vite@7.3.6(@types/node@24.13.3)(jiti@2.7.0)(lightningcss@1.32.0)(tsx@4.23.12))
-      '@types/express':
-        specifier: 4.17.21
-        version: 4.17.21
       '@types/google.maps':
         specifier: ^3.58.1
         version: 3.66.0

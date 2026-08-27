@@ -62,10 +62,10 @@
 - [x] `pnpm exec vite build` ile `dist/public` Vercel çıktısını yeniden üretip doğrulamak
 - [x] Gerçek hata satırının paylaşılan kayıtta yer almadığını belgelemek; yeni dağıtım başarısız olursa ek kaydı istemek
 - [x] Güncellenmiş Vercel tanı ve dağıtım notunun dosyada bulunduğunu yeniden doğrulamak
-- [ ] İletişim formu için e-posta, WhatsApp veya karma teslim yaklaşımını belirlemek
-- [ ] Seçilen kanalın hedef bilgilerini ve gerekli güvenli yapılandırmayı almak
-- [ ] Form gönderimini seçilen teslim kanalına bağlamak ve kullanıcı geri bildirimlerini güncellemek
-- [ ] Teslim akışını uçtan uca test edip dağıtım ortamındaki ayarları doğrulamak
+- [x] İletişim formu için e-posta, WhatsApp veya karma teslim yaklaşımını belirlemek — kapsam, güvenli randevu ve görüşme sistemiyle değiştirildi
+- [x] Seçilen kanalın hedef bilgilerini ve gerekli güvenli yapılandırmayı almak — Vercel/Neon/Resend ortam değişkenleriyle değiştirildi
+- [x] Form gönderimini seçilen teslim kanalına bağlamak ve kullanıcı geri bildirimlerini güncellemek — gerçek başvuru değerlendirme akışıyla değiştirildi
+- [x] Teslim akışını uçtan uca test edip dağıtım ortamındaki ayarları doğrulamak — Vercel üretim E2E doğrulama görevi altında birleştirildi
 - [x] Randevu başvurusu, yönetici erişimi, görüşme odası ve mesajlaşma için veri modellerini tanımlamak
 - [x] Başvuru formuna danışmanlık sınırı, açık rıza ve KVKK onay metinlerini katlanabilir ayrıntılarla eklemek
 - [x] Parola korumalı ayrı yönetim alanı ve başvuru yönetimi ekranını oluşturmak
