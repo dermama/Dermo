@@ -81,4 +81,6 @@
 - [ ] Vercel tRPC işlem yolunun Express katmanında doğru çözümlendiğini doğrulamak
 - [ ] Vercel serverless çalışma zamanını yalın bir sağlık noktasıyla doğrulamak
 - [ ] Vercel üzerinde tRPC mوجه bağımlılıklarının yüklenmesini doğrulamak
+- [ ] Vercel'de mوجه kökünün başlangıçta çökmesine neden olan bağımlılığı izole etmek
+- [ ] Vercel danışmanlık API'sini mوروث OAuth/sistem yönlendiricilerinden ayırarak çalıştırmak
 - [ ] Vercel üretim ortamında e-posta kabul bildirimi ve süreli görüşme bağlantısını doğrulamak
