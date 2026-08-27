@@ -79,4 +79,5 @@
 - [ ] Vercel SPA yönlendirmesinde `/api` isteklerinin fonksiyonlara öncelikli ulaşmasını doğrulamak
 - [ ] Vercel serverless paketi için sunucu içi modül çözümlemesini doğrulamak
 - [ ] Vercel tRPC işlem yolunun Express katmanında doğru çözümlendiğini doğrulamak
+- [ ] Vercel serverless çalışma zamanını yalın bir sağlık noktasıyla doğrulamak
 - [ ] Vercel üretim ortamında e-posta kabul bildirimi ve süreli görüşme bağlantısını doğrulamak
