@@ -4,11 +4,19 @@
   "buildCommand": "pnpm exec vite build",
   "outputDirectory": "dist/public",
   "functions": {
-    "api/trpc/[trpc].ts": {
+    "api/trpc.ts": {
       "maxDuration": 10
     }
   },
   "routes": [
+    {
+      "src": "/api/trpc/(.*)",
+      "dest": "/api/trpc.ts"
+    },
+    {
+      "src": "/api/trpc",
+      "dest": "/api/trpc.ts"
+    },
     {
       "handle": "filesystem"
     },
