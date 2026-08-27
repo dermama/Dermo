@@ -8,7 +8,7 @@ import type { TrpcContext } from "../_core/context";
 const vercelRouter = router({ consultation: consultationRouter });
 const createConsultationContext = ({ req, res }: CreateExpressContextOptions): TrpcContext => ({ req, res, user: null });
 
-const app = express();
+export const app = express();
 app.use(express.json({ limit: "1mb" }));
 app.use(express.urlencoded({ extended: true, limit: "1mb" }));
 app.use("/api/trpc", createExpressMiddleware({ router: vercelRouter, createContext: createConsultationContext }));

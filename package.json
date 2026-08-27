@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "NODE_ENV=development tsx watch server/_core/index.ts",
     "build": "vite build && esbuild server/_core/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist",
-    "vercel-build": "vite build && esbuild server/vercel/trpc.ts --platform=node --bundle --format=esm --target=node20 --outfile=api/trpc.mjs",
+    "vercel-build": "vite build && esbuild server/vercel/trpc.ts --platform=node --bundle --format=cjs --target=node20 --outfile=api/trpc.js --footer:js='module.exports = module.exports.default;'",
     "start": "NODE_ENV=production node dist/index.js",
     "check": "tsc --noEmit",
     "format": "prettier --write .",

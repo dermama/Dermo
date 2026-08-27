@@ -76,15 +76,16 @@
 - [ ] Vercel Functions, harici veritabanı ve e-posta sağlayıcısı için üretim mimarisini doğrulamak
 - [ ] Vercel uyumlu veri katmanını ve gizli yapılandırma gereksinimlerini üretim Neon veritabanında uygulamak
 - [ ] Vercel Functions üzerinden başvuru, yönetim ve mesajlaşma API uçlarını canlı projede doğrulamak
-- [ ] Vercel SPA yönlendirmesinde `/api` isteklerinin fonksiyonlara öncelikli ulaşmasını doğrulamak
-- [ ] Vercel serverless paketi için sunucu içi modül çözümlemesini doğrulamak
-- [ ] Vercel tRPC işlem yolunun Express katmanında doğru çözümlendiğini doğrulamak
-- [ ] Vercel serverless çalışma zamanını yalın bir sağlık noktasıyla doğrulamak
-- [ ] Vercel üzerinde tRPC mوجه bağımlılıklarının yüklenmesini doğrulamak
-- [ ] Vercel'de mوجه kökünün başlangıçta çökmesine neden olan bağımlılığı izole etmek
-- [ ] Vercel danışmanlık API'sini mوروث OAuth/sistem yönlendiricilerinden ayırarak çalıştırmak
-- [ ] Vercel danışmanlık API'sinde OAuth bağımlılığı olmayan hafif tRPC bağlamını doğrulamak
-- [ ] Vercel'de danışmanlık işlevinin paket bağımlılıklarını çalışma zamanında izole etmek
-- [ ] Vercel danışmanlık işlevini üretim bağımlılıkları gömülü bağımsız bir paket olarak derlemek
+- [x] Vercel SPA yönlendirmesinde `/api` isteklerinin fonksiyonlara öncelikli ulaşmasını doğrulamak
+- [x] Vercel serverless paketi için sunucu içi modül çözümlemesini teşhis etmek — ESM pakette Express bağımlılıklarının dinamik `require` uyumsuzluğu tespit edildi
+- [x] Vercel tRPC işlem yolunun Express katmanında gerçek yerel JSON yanıtıyla doğrulamak
+- [x] Vercel serverless çalışma zamanını yalın bir sağlık noktasıyla doğrulamak
+- [x] Vercel üzerinde tRPC mوجه bağımlılıklarının yüklenmesini teşhis etmek — dinamik bağımlılık izleme yerine gömülü CommonJS paket seçildi
+- [x] Vercel'de mوجه kökünün başlangıçta çökmesine neden olan bağımlılığı izole etmek — ESM içinde Express dinamik `require` uyumsuzluğu tespit edildi
+- [x] Vercel danışmanlık API'sini mوروث OAuth/sistem yönlendiricilerinden ayırmak
+- [x] Vercel danışmanlık API'sinde OAuth bağımlılığı olmayan hafif tRPC bağlamını uygulamak
+- [x] Vercel'de danışmanlık işlevinin paket bağımlılıklarını çalışma zamanında izole etmek
+- [x] Vercel danışmanlık işlevini üretim bağımlılıkları gömülü bağımsız bir paket olarak derlemek
 - [ ] Üretim bağımlılıkları gömülü Vercel API paketini kaynakla birlikte yayınlayarak doğrulamak
+- [ ] Vercel API paketinde CommonJS çalışma zamanını doğrulamak
 - [ ] Vercel üretim ortamında e-posta kabul bildirimi ve süreli görüşme bağlantısını doğrulamak

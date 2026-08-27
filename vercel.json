@@ -4,18 +4,18 @@
   "buildCommand": "pnpm run vercel-build",
   "outputDirectory": "dist/public",
   "functions": {
-    "api/trpc.mjs": {
+    "api/trpc.js": {
       "maxDuration": 10
     }
   },
   "routes": [
     {
       "src": "/api/trpc/(.*)",
-      "dest": "/api/trpc.mjs"
+      "dest": "/api/trpc.js"
     },
     {
       "src": "/api/trpc",
-      "dest": "/api/trpc.mjs"
+      "dest": "/api/trpc.js"
     },
     {
       "handle": "filesystem"
