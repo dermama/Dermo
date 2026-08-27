@@ -1,21 +1,21 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "vite",
-  "buildCommand": "pnpm exec vite build",
+  "buildCommand": "pnpm run vercel-build",
   "outputDirectory": "dist/public",
   "functions": {
-    "api/trpc.ts": {
+    "api/trpc.mjs": {
       "maxDuration": 10
     }
   },
   "routes": [
     {
       "src": "/api/trpc/(.*)",
-      "dest": "/api/trpc.ts"
+      "dest": "/api/trpc.mjs"
     },
     {
       "src": "/api/trpc",
-      "dest": "/api/trpc.ts"
+      "dest": "/api/trpc.mjs"
     },
     {
       "handle": "filesystem"

@@ -85,4 +85,6 @@
 - [ ] Vercel danışmanlık API'sini mوروث OAuth/sistem yönlendiricilerinden ayırarak çalıştırmak
 - [ ] Vercel danışmanlık API'sinde OAuth bağımlılığı olmayan hafif tRPC bağlamını doğrulamak
 - [ ] Vercel'de danışmanlık işlevinin paket bağımlılıklarını çalışma zamanında izole etmek
+- [ ] Vercel danışmanlık işlevini üretim bağımlılıkları gömülü bağımsız bir paket olarak derlemek
+- [ ] Üretim bağımlılıkları gömülü Vercel API paketini kaynakla birlikte yayınlayarak doğrulamak
 - [ ] Vercel üretim ortamında e-posta kabul bildirimi ve süreli görüşme bağlantısını doğrulamak
