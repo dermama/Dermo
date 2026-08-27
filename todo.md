@@ -83,4 +83,5 @@
 - [ ] Vercel üzerinde tRPC mوجه bağımlılıklarının yüklenmesini doğrulamak
 - [ ] Vercel'de mوجه kökünün başlangıçta çökmesine neden olan bağımlılığı izole etmek
 - [ ] Vercel danışmanlık API'sini mوروث OAuth/sistem yönlendiricilerinden ayırarak çalıştırmak
+- [ ] Vercel danışmanlık API'sinde OAuth bağımlılığı olmayan hafif tRPC bağlamını doğrulamak
 - [ ] Vercel üretim ortamında e-posta kabul bildirimi ve süreli görüşme bağlantısını doğrulamak
