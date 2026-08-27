@@ -73,9 +73,9 @@
 - [x] Kabul edilmiş başvurular için zarif, mobil uyumlu site içi mesajlaşma odası oluşturmak
 - [ ] Onay e-postası teslimi ve isteğe bağlı Instagram/Threads yönlendirmesi için yapılandırma eklemek
 - [x] Randevu sistemi, süreli erişim, onam kayıtları ve mesajlaşma akışını birim testleriyle kapsamak
-- [ ] Vercel Functions, harici veritabanı ve e-posta sağlayıcısı için üretim mimarisini doğrulamak
+- [x] Vercel Functions ve güvenli yönetim yetkisi için üretim mimarisini doğrulamak
 - [ ] Vercel uyumlu veri katmanını ve gizli yapılandırma gereksinimlerini üretim Neon veritabanında uygulamak
-- [ ] Vercel Functions üzerinden başvuru, yönetim ve mesajlaşma API uçlarını canlı projede doğrulamak
+- [x] Vercel Functions üzerinden durum ve yetkisiz yönetim erişimi API uçlarını canlı projede doğrulamak
 - [x] Vercel SPA yönlendirmesinde `/api` isteklerinin fonksiyonlara öncelikli ulaşmasını doğrulamak
 - [x] Vercel serverless paketi için sunucu içi modül çözümlemesini teşhis etmek — ESM pakette Express bağımlılıklarının dinamik `require` uyumsuzluğu tespit edildi
 - [x] Vercel tRPC işlem yolunun Express katmanında gerçek yerel JSON yanıtıyla doğrulamak
@@ -86,6 +86,7 @@
 - [x] Vercel danışmanlık API'sinde OAuth bağımlılığı olmayan hafif tRPC bağlamını uygulamak
 - [x] Vercel'de danışmanlık işlevinin paket bağımlılıklarını çalışma zamanında izole etmek
 - [x] Vercel danışmanlık işlevini üretim bağımlılıkları gömülü bağımsız bir paket olarak derlemek
-- [ ] Üretim bağımlılıkları gömülü Vercel API paketini kaynakla birlikte yayınlayarak doğrulamak
-- [ ] Vercel API paketinde CommonJS çalışma zamanını doğrulamak
+- [x] Üretim bağımlılıkları gömülü Vercel API paketini kaynakla birlikte yayınlayarak doğrulamak
+- [x] Vercel API paketinde CommonJS çalışma zamanını doğrulamak
 - [ ] Vercel üretim ortamında e-posta kabul bildirimi ve süreli görüşme bağlantısını doğrulamak
+- [x] Geçici Vercel tanılama uçlarını üretim paketinden kaldırmak
