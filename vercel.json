@@ -18,6 +18,10 @@
       "dest": "/api/trpc.js"
     },
     {
+      "src": "/api/(.*)",
+      "dest": "/api/trpc.js"
+    },
+    {
       "handle": "filesystem"
     },
     {
