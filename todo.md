@@ -90,4 +90,4 @@
 - [x] Vercel API paketinde CommonJS çalışma zamanını doğrulamak
 - [ ] Vercel üretim ortamında e-posta kabul bildirimi ve süreli görüşme bağlantısını doğrulamak
 - [x] Geçici Vercel tanılama uçlarını üretim paketinden kaldırmak
-- [ ] Geçici API yollarının SPA fallback yerine 404 döndürdüğünü canlıda doğrulamak
+- [x] Geçici API yollarının SPA fallback yerine 404 döndürdüğünü canlıda doğrulamak
